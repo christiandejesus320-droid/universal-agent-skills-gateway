@@ -19,6 +19,34 @@ metadata:
 
 **ES:** Esta es una única skill operativa y autocontenida. Enseña al agente a entender la petición, seleccionar la capacidad correcta, planificar, construir, inspeccionar, probar, revisar, documentar y cerrar el trabajo con evidencia. Está escrita como instrucciones portables, no como servidor, plugin ni integración de proveedor.
 
+## START HERE / EMPIEZA AQUÍ
+
+> **Problem / Problema:** Models often waste context by mixing planning, research, execution and explanation in one unstructured response. / Los modelos suelen desperdiciar contexto al mezclar planificación, investigación, ejecución y explicación en una sola respuesta desordenada.
+>
+> **Solution / Solución:** This skill loads the minimum necessary context, creates a strict short plan, researches only exact blockers, executes the smallest change and validates with evidence. / Esta skill carga el contexto mínimo, crea un plan corto y estricto, investiga sólo bloqueos exactos, ejecuta el cambio mínimo y valida con evidencia.
+
+### Visible map / Mapa visible
+
+```text
+USER REQUEST / PETICIÓN
+        ↓
+CONTEXT AUDIT → STRICT PLAN → TARGETED RESEARCH → SURGICAL EXECUTION → VALIDATE
+        ↓                                                        ↓
+  MINIMUM CONTEXT                                      EVIDENCE + STOP
+```
+
+### Resource index / Índice de recursos
+
+| Resource / Recurso | Open when / Abrir cuando | File / Archivo |
+| --- | --- | --- |
+| Control loop / Bucle de control | Explaining planning, research and execution / Explicar planificación, investigación y ejecución | [`01-control-loop.mmd`](references/maps/01-control-loop.mmd) · [`PNG`](references/maps/rendered/01-control-loop.png) |
+| Skill selection / Selección de skills | Choosing capabilities / Elegir capacidades | [`02-skill-selection.mmd`](references/maps/02-skill-selection.mmd) · [`PNG`](references/maps/rendered/02-skill-selection.png) |
+| UI atomic map / Mapa atómico UI | Designing interfaces / Diseñar interfaces | [`03-ui-atomic.mmd`](references/maps/03-ui-atomic.mmd) · [`PNG`](references/maps/rendered/03-ui-atomic.png) |
+| Pause on error / Pausa ante error | Handling a failed command or test / Resolver un error | [`04-pause-on-error.mmd`](references/maps/04-pause-on-error.mmd) · [`PNG`](references/maps/rendered/04-pause-on-error.png) |
+| Practical visual / Imagen práctica | Explaining the skill to people / Explicar la skill a personas | [`universal-skill-token-control-hero.png`](references/images/universal-skill-token-control-hero.png) |
+
+**Loading rule / Regla de carga:** show this index immediately, but load only the one map or image required by the current task. Never load all resources by default.
+
 ## Problem / Problema
 
 **EN:** Agents and humans need one shared, model-neutral method to select capabilities, execute real work and prove completion.
