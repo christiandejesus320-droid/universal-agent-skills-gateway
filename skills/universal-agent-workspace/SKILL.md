@@ -427,6 +427,43 @@ For simple work, return only the requested result plus minimum verification. Thi
 
 Para tareas simples, devuelve sólo el resultado solicitado y la verificación mínima. Este protocolo controla contexto y longitud; no sustituye seguridad, autorización ni permisos del host.
 
+## Multi-agent architecture / Arquitectura multiagente
+
+Activate this mode only when the task is genuinely complex, modular or exceeds one controlled linear execution. Do not launch agents by default. Activa este modo sólo cuando la tarea sea realmente compleja, modular o exceda una ejecución lineal controlada. No lances agentes por defecto.
+
+### Leader protocol / Protocolo del líder
+
+The primary agent is the **Architect and Leader**. Before delegation, define topology, shared objective, dependency order, ownership, integration point and stop conditions. Workers cannot delegate to other workers. El agente principal es el **Arquitecto y Líder**. Antes de delegar define topología, objetivo, dependencias, responsable, integración y paradas. Los workers no pueden delegar a otros workers.
+
+For each worker, send only this contract:
+
+```yaml
+role: "one specialist role"
+goal: "one outcome"
+in_scope: ["only files, symbols or questions allowed"]
+out_of_scope: ["what must not be touched"]
+context: ["minimum facts and references"]
+output: "compact JSON only"
+acceptance: ["checkable result"]
+```
+
+### Delegation sequence / Secuencia de delegación
+
+1. Decompose the task into independent units and identify dependencies. / Divide la tarea en unidades independientes e identifica dependencias.
+2. Assign one role and one goal per worker. / Asigna un rol y un objetivo por worker.
+3. Give each worker minimum context and explicit in-scope and out-of-scope limits. / Entrega contexto mínimo y límites explícitos.
+4. Let research workers query only the exact unknown blocking progress. / Permite que investigación consulte sólo el dato exacto que bloquea.
+5. Collect outputs as JSON, validate them against acceptance and integrate once. / Recoge JSON, valida aceptación e integra una sola vez.
+6. If one worker fails, send a micro-fix only to that worker with the exact error. / Si falla uno, envía sólo a ese worker el error exacto.
+7. Remove coordination scaffolding from the final result and do not add unrequested features. / Elimina el andamiaje y no agregues funcionalidades no solicitadas.
+
+### Worker output / Salida del worker
+```json
+{"status":"done|blocked","role":"...","result":"...","files":[],"evidence":[],"blocker":null}
+```
+
+Never pass the full conversation to a worker, duplicate ownership or run parallel research for dependent questions. Require confirmation before external, destructive or irreversible actions. Nunca pases la conversación completa a un worker, dupliques responsables ni ejecutes investigación paralela con preguntas dependientes. Exige confirmación antes de acciones externas, destructivas o irreversibles.
+
 ## Concept maps and visual context / Mapas conceptuales y contexto visual
 
 Load these resources only when the task requires architecture explanation, skill selection, UI composition, error recovery or a visual overview. Do not load all images or maps by default.
