@@ -1,82 +1,77 @@
 # Universal Agent Workspace
 
-> **Una skill. Cualquier modelo. Trabajo real.**
->
-> **One skill. Every model. Real work.**
+> **Una biblioteca de conocimiento operativo para trabajar con agentes.**
 
-<p align="center"><img src="library/assets/universal-skill-token-control-laptop-only.png" width="720" alt="Universal Agent Workspace — una laptop mostrando el método de trabajo y el control de contexto"></p>
+<p align="center"><img src="library/assets/universal-skill-token-control-laptop-only.png" width="560" alt="Laptop mostrando una superficie de trabajo para controlar contexto y ejecución"></p>
 
-Estoy construyendo una skill portable para resolver un problema concreto: que la IA no empiece a escribir código ni a ejecutar acciones a ciegas en cuanto recibe una orden.
+Estoy construyendo esta skill para resolver algo que ocurre todo el tiempo: uno le pide algo a un agente y empieza a escribir código, buscar cosas o ejecutar comandos antes de entender realmente el trabajo.
 
-La skill obliga al agente a **entender el objetivo, revisar el contexto disponible, investigar sólo lo que bloquea el avance, proponer un plan corto, ejecutar el cambio mínimo y demostrar que terminó correctamente**. No intento crear otro chatbot ni otro gateway. Estoy creando una forma de trabajo reutilizable para cualquier modelo que pueda leer instrucciones en Markdown.
+Mi intención es poner un orden sencillo antes de la acción. Primero entender. Después decidir qué contexto sirve. Luego hacer un plan corto. Sólo entonces tocar los archivos, comprobar el resultado y cerrar con evidencia.
 
-I am building a portable skill for one specific problem: preventing an AI agent from writing code or taking action blindly as soon as it receives a request.
+No estoy creando una dashboard para presumir funciones. Tampoco una tienda de plugins, un chatbot o una gateway de modelos. Estoy creando una forma de trabajar que pueda leer cualquier agente capaz de usar una `SKILL.md`.
 
-The skill makes the agent **understand the objective, inspect available context, research only what blocks progress, propose a short plan, execute the smallest useful change, and prove completion**. This is not a chatbot and it is not a gateway. It is a reusable operating method for any model that can read Markdown instructions.
+## La idea central
 
-## La idea en una imagen / The idea in one image
+La skill funciona como una capa de criterio entre la petición y la ejecución. No le dice al agente que piense más por pensar. Le dice que no gaste contexto en lo que no ayuda y que no cambie cosas que nadie le pidió cambiar.
 
-La imagen no intenta vender una inteligencia artificial. Muestra el tipo de herramienta que quiero construir: una superficie de trabajo sobria, donde la intención se convierte en una secuencia clara y el contexto se mantiene bajo control.
+```text
+petición real
+     ↓
+entender qué se quiere lograr
+     ↓
+definir qué entra y qué queda fuera
+     ↓
+buscar sólo lo que bloquea
+     ↓
+hacer el cambio necesario
+     ↓
+comprobar y dejar evidencia
+```
 
-Quiero que la interfaz parezca una herramienta que un ingeniero, un diseñador o un fundador pueda abrir todos los días. **La tecnología debe sentirse por el comportamiento, no por los efectos.** La skill no carga todo el conocimiento al principio. Primero muestra la ruta; después abre únicamente el recurso que hace falta.
+> **El lujo de esta interfaz no está en los efectos. Está en el control.**
 
-> **THINK → PLAN → BUILD → REVIEW → TEST → SHIP → REFLECT**
+## Cómo trabajo con ella
 
-## Qué problema resuelve / What problem it solves
+Cuando recibo una tarea, no activo todas las capacidades disponibles. Identifico el problema dominante y elijo una capacidad principal. Si hace falta, añado como máximo tres apoyos. Cada referencia se abre sólo cuando la fase en curso la necesita.
 
-| Antes | Con Universal Agent Workspace |
+Si la tarea es pequeña, la resuelvo en un solo hilo. Si tiene partes independientes, como datos, API, interfaz y pruebas, primero actúo como arquitecto: separo el trabajo, asigno un objetivo único a cada especialista, paso el contexto mínimo y dejo claro qué no puede tocar. Después integro las salidas y vuelvo a validar.
+
+Si aparece un error, no vuelvo a investigar todo el proyecto. Guardo el error exacto, aíslo el archivo o función involucrada, busco la causa puntual y hago una micro-corrección. Si una acción puede borrar, publicar, pagar, enviar información o cambiar producción, me detengo y espero autorización humana.
+
+## Lo que resuelve
+
+| Problema habitual | Regla que aplico |
 | --- | --- |
-| El agente empieza a programar sin entender el alcance. | Define el problema, las restricciones y lo que queda fuera. |
-| Investiga demasiado y consume contexto sin necesidad. | Investiga únicamente el bloqueo exacto. |
-| Mezcla arquitectura, código, pruebas y explicación en una sola salida. | Trabaja por fases con entregables pequeños y verificables. |
-| Activa muchos agentes sin límites claros. | Actúa como arquitecto principal y delega con contexto mínimo. |
-| Termina diciendo que “funciona” sin demostrarlo. | Cierra con checks, evidencia, riesgos y condición de parada. |
-| Depende de Claude, una API o un servicio intermediario. | Usa una única `SKILL.md` portable y neutral respecto al modelo. |
+| El agente empieza sin entender el alcance. | Reformulo el objetivo y marco el fuera de alcance. |
+| La investigación se vuelve infinita. | Investigo sólo el dato que desbloquea el siguiente paso. |
+| El contexto se llena de información repetida. | Cargo referencias bajo demanda y descargo estado cuando ya no sirve. |
+| Varios agentes hacen el mismo trabajo. | El líder define roles, límites y una salida compacta por especialista. |
+| El resultado no se puede comprobar. | Termino con checks, evidencia, riesgos y pendientes. |
 
-## Cómo funciona / How it works
+## Los mapas son mi forma de explicarlo
 
-### Primero: entender / First: understand
+No los hice para decorar el repositorio. Los hice para que se entienda la manera de trabajar antes de entrar en todo el contenido de la skill.
 
-El agente reformula el objetivo, identifica al usuario, reconoce las restricciones, clasifica el riesgo y registra la información que falta. Si no entiende el problema, todavía no está autorizado a construir.
+<p align="center"><img src="library/assets/map-control-loop.png" width="700" alt="Mapa personal del bucle de trabajo: entender, decidir, ejecutar y comprobar"></p>
 
-### Después: planificar / Then: plan
+| Mapa | Qué explica |
+| --- | --- |
+| [Bucle de control](skills/universal-agent-workspace/references/maps/01-control-loop.mmd) | Cómo paso de una petición real a un resultado comprobado. |
+| [Selección](skills/universal-agent-workspace/references/maps/02-skill-selection.mmd) | Cómo elijo la ayuda mínima para el problema que tengo delante. |
+| [UI atómica](skills/universal-agent-workspace/references/maps/03-ui-atomic.mmd) | Cómo diseño desde lo que necesita la persona y no desde una colección de componentes. |
+| [Pausa ante error](skills/universal-agent-workspace/references/maps/04-pause-on-error.mmd) | Cómo paro, aíslo la causa y corrijo sin improvisar. |
 
-Selecciona una capacidad principal y como máximo tres capacidades de apoyo. Define archivos, secuencia, aceptación, límites y condición de parada. El plan debe ser corto porque su función es controlar la ejecución, no llenar la ventana de contexto.
+Los diagramas están escritos en primera persona porque esa es la idea: explicar el método como lo usaría una persona trabajando, no como una lista de capacidades de un sistema.
 
-### Si hace falta: delegar / When needed: delegate
+## La skill que se instala
 
-En problemas con partes independientes, el agente se convierte en líder. Divide la tarea, asigna un único objetivo a cada especialista, comparte sólo el contexto mínimo y define explícitamente `in_scope` y `out_of_scope`. Los especialistas no se delegan entre sí.
-
-### Finalmente: demostrar / Finally: prove
-
-Ejecuta el cambio más pequeño y reversible, revisa regresiones, corre las comprobaciones proporcionales al riesgo y entrega evidencia. Las acciones externas, destructivas o irreversibles requieren un checkpoint humano.
-
-## Mapas del método / Method maps
-
-Los mapas no son decoración. Funcionan como una guía visual para que una persona entienda la skill antes de leer sus instrucciones completas.
-
-<p align="center">
-  <img src="library/assets/map-control-loop.png" width="720" alt="Mapa del bucle de control">
-</p>
-
-| Mapa | Lo que explica | Fuente editable |
-| --- | --- | --- |
-| **Bucle de control** | Cómo paso de una petición real a una respuesta con evidencia. | [Ver mapa](skills/universal-agent-workspace/references/maps/01-control-loop.mmd) |
-| **Selección de capacidades** | Cómo elijo la ayuda mínima según el problema. | [Ver mapa](skills/universal-agent-workspace/references/maps/02-skill-selection.mmd) |
-| **UI atómica** | Cómo construyo una interfaz desde la necesidad de la persona. | [Ver mapa](skills/universal-agent-workspace/references/maps/03-ui-atomic.mmd) |
-| **Pausa ante error** | Cómo paro, aíslo y corrijo sin improvisar. | [Ver mapa](skills/universal-agent-workspace/references/maps/04-pause-on-error.mmd) |
-
-Las otras tres versiones están disponibles en la carpeta de mapas y se muestran como referencias visuales dentro de la biblioteca opcional. No quiero que el README se convierta en una pared de imágenes: una idea dominante por sección, texto útil y espacio para respirar.
-
-## La skill principal / The main skill
-
-La entrega importante está aquí:
+La parte importante del repositorio es esta:
 
 ```text
 skills/universal-agent-workspace/SKILL.md
 ```
 
-La carpeta contiene una sola skill autónoma y sus referencias progresivas. El archivo principal permanece por debajo de 500 líneas para que pueda cargarse sin convertir el contexto en basura. Los detalles específicos viven en `references/` y sólo se abren cuando la tarea los necesita.
+El archivo principal contiene el método común. Las referencias contienen el detalle que no conviene meter en cada conversación.
 
 ```text
 skills/universal-agent-workspace/
@@ -91,22 +86,36 @@ skills/universal-agent-workspace/
     └── images/
 ```
 
-## Qué contiene / What it contains
+Esta separación es importante. La skill debe ser fácil de cargar, fácil de revisar y fácil de copiar a otro agente. No depende de Node.js, Python, MCP, una API, un proveedor concreto ni un proceso corriendo detrás.
 
-| Área | Resultado |
-| --- | --- |
-| Producto y estrategia | Reformulación del problema, PRD, especificaciones y revisión de alcance. |
-| Arquitectura | Dominio, datos, APIs, estados, seguridad y decisiones reversibles. |
-| Ingeniería | Implementación tipada, separación de responsabilidades y estándares de producción. |
-| UI y diseño | Sistema bilingüe de tokens, átomos, moléculas, organismos y layouts. |
-| Creative technology | Reglas para Three.js, Canvas, shaders, WebGL, WebGPU y Remotion sin animación inútil. |
-| QA y seguridad | Investigación de causa raíz, revisión, pruebas proporcionales, checkpoints y límites. |
-| Multiagente | Topología, aislamiento de contexto, roles únicos y ensamblaje controlado. |
-| Documentación | Salidas legibles para humanos y contratos compactos para agentes. |
+## Qué incluye
 
-## Uso real / Real use
+La skill reúne en un mismo método la parte de producto, arquitectura, implementación, diseño, QA, seguridad, investigación, documentación y coordinación multiagente. No intenta reemplazar las herramientas de cada área. Les da un orden de uso.
 
-Copia la carpeta de la skill al directorio de skills que soporte tu agente. No necesitas instalar Node.js, Python, MCP, una API ni un gateway para utilizarla.
+Para diseño de interfaces uso:
+
+```text
+TOKENS → ATOMS → MOLECULES → ORGANISMS → LAYOUT
+```
+
+La dirección visual es OLED, editorial, técnica y silenciosa. Uso un color de acento con significado, tipografía legible, espacio suficiente, pocos contenedores y motion sólo cuando explica una transición o un cambio de estado. Una interfaz no se vuelve mejor por parecer futurista.
+
+Para una tarea visual, cada control debe tener estados de espera, foco, acción, carga, desactivado, éxito y error. Para una tarea con Canvas, Three.js, WebGL, WebGPU o Remotion, primero explico por qué la tecnología mejora la comprensión y después defino fallback, rendimiento y alternativa accesible.
+
+## Un ejemplo real de uso
+
+```text
+Revisa esta API multi-tenant.
+Primero dime qué problema ves y qué queda fuera.
+Investiga sólo lo que no puedas resolver con el repositorio.
+Haz un plan corto, modifica los archivos necesarios y demuestra las pruebas.
+```
+
+La respuesta correcta no es una lluvia de código. Es una secuencia controlada: problema, alcance, plan, cambio, comprobación y evidencia.
+
+## Instalación
+
+Copia la carpeta de la skill en el directorio que utilice tu agente:
 
 ```bash
 git clone https://github.com/christiandejesus320-droid/universal-agent-skills-gateway.git
@@ -114,32 +123,9 @@ cp -R universal-agent-skills-gateway/skills/universal-agent-workspace \
   ~/.agents/skills/universal-agent-workspace
 ```
 
-Después escribe una petición normal. La skill se activa cuando la tarea requiere planificación, investigación dirigida, ejecución sobre archivos, revisión, pruebas, diseño de interfaz, documentación, coordinación multiagente o control estricto del contexto.
+Si tu agente utiliza otra ruta, conserva la carpeta y el archivo `SKILL.md`. El formato es Markdown estándar. Los adaptadores, catálogos y herramientas opcionales del repositorio no son necesarios para usar el método.
 
-```text
-Revisa esta API multi-tenant. Primero identifica el problema y el alcance,
-propón un plan corto, modifica sólo los archivos necesarios y demuestra las pruebas.
-```
-
-## Design system / Sistema de diseño
-
-Para tareas de interfaz, la skill usa esta secuencia:
-
-```text
-TOKENS → ATOMS → MOLECULES → ORGANISMS → LAYOUT
-```
-
-El lenguaje visual parte de una base OLED, contraste alto, tipografía editorial, aire deliberado, bordes contenidos y motion con propósito. Cada interacción debe definir idle, hover, focus, active, loading, disabled, success y error. Para branding, dashboards premium, interfaces de agentes o sistemas visuales de alto nivel, la skill abre `luxury-digital-design-system.md` bajo demanda.
-
-For interface work, the skill uses the same atomic sequence and loads the design reference only when the task requires it. The visual system favors OLED depth, high contrast, editorial hierarchy, restrained borders, purposeful motion and accessible states.
-
-## Qué no es / What it is not
-
-No es una gateway de modelos. No enruta peticiones entre proveedores. No exige un servidor persistente. No ejecuta automáticamente código remoto. No reemplaza los permisos del sistema operativo, un sandbox, una política de seguridad ni la confirmación humana.
-
-El catálogo y la biblioteca visual son herramientas opcionales de apoyo. La skill sigue funcionando copiando únicamente `SKILL.md` y sus referencias necesarias.
-
-## Validación / Validation
+## Validación
 
 ```bash
 npm run build
@@ -149,11 +135,15 @@ python /home/ubuntu/skills/skill-creator/scripts/quick_validate.py \
   skills/universal-agent-workspace
 ```
 
-La calidad se verifica en cinco dimensiones: descubribilidad, adherencia a instrucciones, economía de contexto, seguridad y evidencia de resultado.
+Compruebo cinco cosas antes de cerrar: que la skill se descubra bien, que las instrucciones se puedan seguir, que no desperdicie contexto, que respete límites de seguridad y que el resultado tenga evidencia.
+
+## English summary
+
+Universal Agent Workspace is a portable operating method for model-neutral agent work. It makes an agent understand the objective, define scope, research only blockers, execute the smallest useful change, validate the result and stop with evidence. It is a Markdown skill, not a model gateway, chatbot or plugin marketplace.
 
 ## Licencia / License
 
-MIT. Las referencias externas se mantienen como fuentes de patrones y deben revisarse por licencia, versión, seguridad y compatibilidad antes de reutilizar código o instrucciones.
+MIT. Las referencias externas sirven para estudiar patrones. Antes de reutilizar código o instrucciones, reviso licencia, versión, seguridad y compatibilidad.
 
 ## Referencias / References
 
