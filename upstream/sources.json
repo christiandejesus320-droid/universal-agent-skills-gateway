@@ -1,0 +1,26 @@
+{
+  "policy": "upstream-readonly",
+  "sources": [
+    {
+      "name": "gstack",
+      "repository": "https://github.com/garrytan/gstack.git",
+      "commit": "ad8400543cd9ce8d07641362db48d44a95417e33",
+      "local_audit_path": "/home/ubuntu/universal-skills-work/gstack",
+      "integration": "reference-only; wrapper consumes concepts and allows optional submodule"
+    },
+    {
+      "name": "vercel-skills",
+      "repository": "https://github.com/vercel-labs/skills.git",
+      "commit": "435076e78988e1e6ec40d00b0b1d76bdbbc5419a",
+      "local_audit_path": "/home/ubuntu/universal-skills-work/vercel-skills",
+      "integration": "reference-only; universal runtime follows SKILL.md and multi-agent installation conventions"
+    },
+    {
+      "name": "agent-skills-specification",
+      "repository": "https://agentskills.io/specification",
+      "commit": null,
+      "local_audit_path": null,
+      "integration": "format contract for portable SKILL.md packages"
+    }
+  ]
+}

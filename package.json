@@ -1,0 +1,27 @@
+{
+  "name": "universal-agent-skills-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Universal Agent Skills runtime and real-time multi-model gateway.",
+  "type": "module",
+  "bin": {
+    "uaskills": "./bin/uaskills.mjs"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "node --watch --import tsx src/server.ts",
+    "test": "node tests/integration.mjs",
+    "test:integration": "node tests/integration.mjs",
+    "validate": "node bin/uaskills.mjs validate",
+    "catalog": "node bin/uaskills.mjs list"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.3.0",
+    "typescript": "^7.0.2"
+  }
+}

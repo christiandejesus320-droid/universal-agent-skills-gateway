@@ -1,0 +1,1008 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-08-26",
+  "selection_method": "utility + maturity + ecosystem adoption; no automatic execution of remote skill code",
+  "count": 100,
+  "skills": [
+    {
+      "id": 1,
+      "slug": "office-hours",
+      "category": "product-strategy",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Descubrir el problema real mediante preguntas de forcing y reformular la oportunidad.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 2,
+      "slug": "plan-ceo-review",
+      "category": "product-strategy",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Revisar alcance, valor y estrategia desde la perspectiva de producto y dirección.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 3,
+      "slug": "autoplan",
+      "category": "product-strategy",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Encadenar revisión ejecutiva, diseño, ingeniería y DX antes de construir.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 4,
+      "slug": "to-prd",
+      "category": "product-strategy",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Convertir una idea en un PRD verificable y accionable.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 5,
+      "slug": "to-spec",
+      "category": "product-strategy",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Convertir requisitos ambiguos en una especificación técnica precisa.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 6,
+      "slug": "domain-modeling",
+      "category": "product-strategy",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Modelar el dominio, invariantes, entidades y límites del sistema.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 7,
+      "slug": "grill-me",
+      "category": "product-strategy",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Someter una propuesta a preguntas adversariales para descubrir riesgos.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 8,
+      "slug": "research",
+      "category": "product-strategy",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Investigar con trazabilidad, fuentes y síntesis útil para decisiones.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 9,
+      "slug": "ai-research-explore",
+      "category": "product-strategy",
+      "source": "llllllama/rigorpilot-skills",
+      "repository": "https://github.com/lllllllama/rigorpilot-skills",
+      "summary": "Explorar un tema complejo y organizar hipótesis y evidencia.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 10,
+      "slug": "analyze-project",
+      "category": "product-strategy",
+      "source": "lllllllama/rigorpilot-skills",
+      "repository": "https://github.com/lllllllama/rigorpilot-skills",
+      "summary": "Analizar un proyecto existente antes de proponer cambios.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 11,
+      "slug": "plan-eng-review",
+      "category": "architecture",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Fijar arquitectura, flujo de datos, estados, fallos, seguridad y pruebas.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 12,
+      "slug": "plan-devex-review",
+      "category": "architecture",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Diseñar y evaluar la experiencia de desarrollo de extremo a extremo.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 13,
+      "slug": "implement",
+      "category": "architecture",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Implementar una especificación con límites de alcance y verificación.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 14,
+      "slug": "codebase-design",
+      "category": "architecture",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Diseñar cambios sobre un código existente con comprensión estructural.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 15,
+      "slug": "improve-codebase-architecture",
+      "category": "architecture",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Reducir acoplamiento y mejorar la arquitectura sin reescrituras innecesarias.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 16,
+      "slug": "prisma-database-setup",
+      "category": "architecture",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Diseñar y configurar una base de datos Prisma de forma segura.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 17,
+      "slug": "prisma-client-api",
+      "category": "architecture",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Usar Prisma Client y sus APIs con patrones mantenibles.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 18,
+      "slug": "prisma-postgres",
+      "category": "architecture",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Aplicar buenas prácticas para PostgreSQL con Prisma.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 19,
+      "slug": "supabase",
+      "category": "architecture",
+      "source": "supabase/agent-skills",
+      "repository": "https://github.com/supabase/agent-skills",
+      "summary": "Construir soluciones Supabase con autenticación, datos y RLS.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 20,
+      "slug": "supabase-postgres-best-practices",
+      "category": "architecture",
+      "source": "supabase/agent-skills",
+      "repository": "https://github.com/supabase/agent-skills",
+      "summary": "Aplicar prácticas de rendimiento, seguridad y diseño en PostgreSQL.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 21,
+      "slug": "review",
+      "category": "code-quality",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Encontrar fallos de producción y huecos de completitud en cambios de código.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 22,
+      "slug": "investigate",
+      "category": "code-quality",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Investigar causas raíz mediante hipótesis y evidencia antes de corregir.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 23,
+      "slug": "careful",
+      "category": "code-quality",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Advertir y bloquear comandos destructivos o de alto riesgo.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 24,
+      "slug": "freeze",
+      "category": "code-quality",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Restringir ediciones a un área de trabajo durante depuración.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 25,
+      "slug": "guard",
+      "category": "code-quality",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Combinar controles de seguridad y bloqueo de alcance para trabajo sensible.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 26,
+      "slug": "diagnose",
+      "category": "code-quality",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Diagnosticar errores con un proceso sistemático y reproducible.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 27,
+      "slug": "diagnosing-bugs",
+      "category": "code-quality",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Aislar regresiones, causas y correcciones con evidencia.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 28,
+      "slug": "resolving-merge-conflicts",
+      "category": "code-quality",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Resolver conflictos de merge preservando intención y pruebas.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 29,
+      "slug": "tdd",
+      "category": "code-quality",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Desarrollar con pruebas primero y ciclos cortos de verificación.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 30,
+      "slug": "request-refactor-plan",
+      "category": "code-quality",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Preparar un plan de refactorización acotado, medible y reversible.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 31,
+      "slug": "qa",
+      "category": "qa-security",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Probar la aplicación en navegador, corregir fallos y generar regresiones.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 32,
+      "slug": "qa-only",
+      "category": "qa-security",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Realizar una auditoría QA report-only sin modificar código.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 33,
+      "slug": "cso",
+      "category": "qa-security",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Ejecutar revisión OWASP y STRIDE con evidencia y umbral de confianza.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 34,
+      "slug": "webapp-testing",
+      "category": "qa-security",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Probar aplicaciones web con escenarios reproducibles y resultados verificables.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 35,
+      "slug": "git-guardrails-claude-code",
+      "category": "qa-security",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Aplicar protecciones para operaciones Git peligrosas.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 36,
+      "slug": "web-design-guidelines",
+      "category": "qa-security",
+      "source": "vercel-labs/agent-skills",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "summary": "Auditar una interfaz según principios web y accesibilidad.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 37,
+      "slug": "azure-rbac",
+      "category": "qa-security",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Diseñar controles de acceso RBAC con mínimo privilegio en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 38,
+      "slug": "azure-diagnostics",
+      "category": "qa-security",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Diagnosticar incidentes y problemas operativos en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 39,
+      "slug": "firebase-basics",
+      "category": "qa-security",
+      "source": "firebase/agent-skills",
+      "repository": "https://github.com/firebase/agent-skills",
+      "summary": "Aplicar fundamentos de Firebase con controles operativos.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 40,
+      "slug": "full-output-enforcement",
+      "category": "qa-security",
+      "source": "leonxlnx/taste-skill",
+      "repository": "https://github.com/leonxlnx/taste-skill",
+      "summary": "Evitar entregables incompletos mediante validación de salida.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 41,
+      "slug": "ship",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Preparar cambios, ejecutar pruebas, actualizar cobertura y abrir PR.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 42,
+      "slug": "land-and-deploy",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Fusionar, esperar CI/despliegue y verificar salud en producción.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 43,
+      "slug": "canary",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Monitorear errores, rendimiento y fallos después del despliegue.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 44,
+      "slug": "benchmark",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Medir carga, Core Web Vitals y tamaños de recursos antes/después.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 45,
+      "slug": "document-release",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Actualizar documentación para reflejar exactamente lo desplegado.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 46,
+      "slug": "setup-deploy",
+      "category": "release-ops",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Configurar plataforma, URL y comandos para un despliegue repetible.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 47,
+      "slug": "azure-reliability",
+      "category": "release-ops",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Diseñar fiabilidad, redundancia y recuperación para Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 48,
+      "slug": "azure-cost-optimization",
+      "category": "release-ops",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Identificar oportunidades de optimización de costes en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 49,
+      "slug": "azure-compute",
+      "category": "release-ops",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Elegir y operar recursos de cómputo en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 50,
+      "slug": "remotion-best-practices",
+      "category": "release-ops",
+      "source": "remotion-dev/skills",
+      "repository": "https://github.com/remotion-dev/skills",
+      "summary": "Aplicar prácticas sólidas para producir vídeo con Remotion.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 51,
+      "slug": "plan-design-review",
+      "category": "design-frontend",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Evaluar y elevar una propuesta visual antes de implementarla.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 52,
+      "slug": "design-consultation",
+      "category": "design-frontend",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Crear un sistema de diseño con investigación y riesgos creativos controlados.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 53,
+      "slug": "design-shotgun",
+      "category": "design-frontend",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Explorar variantes visuales y recopilar feedback antes de fijar dirección.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 54,
+      "slug": "design-html",
+      "category": "design-frontend",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Convertir una dirección visual en HTML/CSS dinámico y funcional.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 55,
+      "slug": "design-review",
+      "category": "design-frontend",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Auditar y corregir una interfaz con una mirada de diseñador que programa.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 56,
+      "slug": "frontend-design",
+      "category": "design-frontend",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Diseñar frontend diferenciado y listo para producción.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 57,
+      "slug": "vercel-composition-patterns",
+      "category": "design-frontend",
+      "source": "vercel-labs/agent-skills",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "summary": "Componer componentes React escalables y mantenibles.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 58,
+      "slug": "vercel-react-best-practices",
+      "category": "design-frontend",
+      "source": "vercel-labs/agent-skills",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "summary": "Aplicar rendimiento y buenas prácticas de React y Next.js.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 59,
+      "slug": "vercel-react-native-skills",
+      "category": "design-frontend",
+      "source": "vercel-labs/agent-skills",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "summary": "Construir interfaces React Native con patrones fiables.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 60,
+      "slug": "ui-ux-pro-max",
+      "category": "design-frontend",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "summary": "Diseñar UI/UX con sistema visual, jerarquía y criterios de producto.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 61,
+      "slug": "document-generate",
+      "category": "docs-content",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Generar documentación completa con enfoque Diátaxis.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 62,
+      "slug": "make-pdf",
+      "category": "docs-content",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Convertir Markdown en documentos publicados con diagramas y layout robusto.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 63,
+      "slug": "diagram",
+      "category": "docs-content",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Crear diagramas editables y renderizables a partir de una descripción.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 64,
+      "slug": "write-a-skill",
+      "category": "docs-content",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Crear una skill clara, portable y orientada a resultados.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 65,
+      "slug": "writing-great-skills",
+      "category": "docs-content",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Mejorar instrucciones, triggers y disclosure progresivo de una skill.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 66,
+      "slug": "writing-for-agents",
+      "category": "docs-content",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Escribir contenido que agentes puedan interpretar y ejecutar.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 67,
+      "slug": "docx",
+      "category": "docs-content",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Crear y editar documentos Word estructurados.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 68,
+      "slug": "pdf",
+      "category": "docs-content",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Leer, generar y verificar documentos PDF.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 69,
+      "slug": "pptx",
+      "category": "docs-content",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Crear presentaciones PowerPoint con estructura y diseño.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 70,
+      "slug": "xlsx",
+      "category": "docs-content",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Crear y analizar hojas de cálculo Excel.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 71,
+      "slug": "prisma-cli",
+      "category": "data-cloud",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Usar la CLI de Prisma con migraciones y generación reproducibles.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 72,
+      "slug": "prisma-compute",
+      "category": "data-cloud",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Aplicar capacidades de cómputo y conexión de Prisma.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 73,
+      "slug": "prisma-mongodb-upgrade",
+      "category": "data-cloud",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Planificar una actualización de Prisma MongoDB.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 74,
+      "slug": "prisma-driver-adapter-implementation",
+      "category": "data-cloud",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Implementar adaptadores de drivers para Prisma.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 75,
+      "slug": "prisma-upgrade-v7",
+      "category": "data-cloud",
+      "source": "prisma/skills",
+      "repository": "https://github.com/prisma/skills",
+      "summary": "Planificar y ejecutar actualizaciones a Prisma v7.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 76,
+      "slug": "azure-kubernetes",
+      "category": "data-cloud",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Diseñar despliegues y operación de Kubernetes en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 77,
+      "slug": "azure-messaging",
+      "category": "data-cloud",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Diseñar mensajería y comunicación asíncrona en Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 78,
+      "slug": "azure-quotas",
+      "category": "data-cloud",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Gestionar cuotas y límites de servicios Azure.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 79,
+      "slug": "microsoft-foundry",
+      "category": "data-cloud",
+      "source": "microsoft/azure-skills",
+      "repository": "https://github.com/microsoft/azure-skills",
+      "summary": "Trabajar con capacidades de AI y Foundry de Microsoft.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 80,
+      "slug": "firebase-data-connect",
+      "category": "data-cloud",
+      "source": "firebase/agent-skills",
+      "repository": "https://github.com/firebase/agent-skills",
+      "summary": "Modelar y conectar datos con Firebase Data Connect.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 81,
+      "slug": "to-tickets",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Convertir decisiones y requisitos en tickets ejecutables.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 82,
+      "slug": "retro",
+      "category": "research-dx",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Realizar retrospectivas de ingeniería con tendencias y oportunidades.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 83,
+      "slug": "learn",
+      "category": "research-dx",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Gestionar memoria de proyecto, patrones, errores y preferencias.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 84,
+      "slug": "devex-review",
+      "category": "research-dx",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Auditar la experiencia real de onboarding y desarrollo.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 85,
+      "slug": "teach",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Explicar conceptos y guiar aprendizaje mediante ejemplos.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 86,
+      "slug": "ask-matt",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Obtener una segunda perspectiva práctica sobre decisiones técnicas.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 87,
+      "slug": "grill-with-docs",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Interrogar una decisión usando documentación como evidencia.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 88,
+      "slug": "zoom-out",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Ampliar el contexto para evitar optimizaciones locales.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 89,
+      "slug": "paper-context-resolver",
+      "category": "research-dx",
+      "source": "lllllllama/rigorpilot-skills",
+      "repository": "https://github.com/lllllllama/rigorpilot-skills",
+      "summary": "Resolver contexto y referencias de un paper o investigación.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 90,
+      "slug": "wayfinder",
+      "category": "research-dx",
+      "source": "mattpocock/skills",
+      "repository": "https://github.com/mattpocock/skills",
+      "summary": "Navegar un código o problema grande hacia el siguiente paso útil.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 91,
+      "slug": "pair-agent",
+      "category": "automation-integration",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Coordinar agentes distintos mediante navegador compartido y tokens acotados.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 92,
+      "slug": "browse",
+      "category": "automation-integration",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Dar a un agente acceso controlado a Chromium, clicks y screenshots.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 93,
+      "slug": "setup-browser-cookies",
+      "category": "automation-integration",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Preparar sesiones autenticadas de navegador con importación explícita.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 94,
+      "slug": "codex",
+      "category": "automation-integration",
+      "source": "gstack",
+      "repository": "https://github.com/garrytan/gstack",
+      "summary": "Solicitar una segunda opinión independiente a otro modelo/agente.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 95,
+      "slug": "skill-creator",
+      "category": "automation-integration",
+      "source": "anthropics/skills",
+      "repository": "https://github.com/anthropics/skills",
+      "summary": "Crear y empaquetar nuevas skills reutilizables.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 96,
+      "slug": "ai-video-generation",
+      "category": "automation-integration",
+      "source": "genmedia-labs/skills",
+      "repository": "https://github.com/genmedia-labs/skills",
+      "summary": "Planificar y producir vídeo con modelos generativos.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 97,
+      "slug": "ai-music",
+      "category": "automation-integration",
+      "source": "prime-skills/runcomfy-agent-skills",
+      "repository": "https://github.com/prime-skills/runcomfy-agent-skills",
+      "summary": "Crear música generativa mediante workflows controlados.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 98,
+      "slug": "video-edit",
+      "category": "automation-integration",
+      "source": "prime-skills/runcomfy-agent-skills",
+      "repository": "https://github.com/prime-skills/runcomfy-agent-skills",
+      "summary": "Editar vídeo con un flujo de trabajo generativo.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 99,
+      "slug": "content-strategy",
+      "category": "automation-integration",
+      "source": "coreyhaines31/marketingskills",
+      "repository": "https://github.com/coreyhaines31/marketingskills",
+      "summary": "Diseñar estrategia de contenidos orientada a objetivos.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    },
+    {
+      "id": 100,
+      "slug": "seo-audit",
+      "category": "automation-integration",
+      "source": "coreyhaines31/marketingskills",
+      "repository": "https://github.com/coreyhaines31/marketingskills",
+      "summary": "Auditar SEO técnico y de contenido.",
+      "selection_basis": "Adopción observable en skills.sh o valor operativo probado en el upstream; sujeto a revisión de licencia, seguridad y compatibilidad antes de activar ejecución externa.",
+      "status": "candidate"
+    }
+  ]
+}
