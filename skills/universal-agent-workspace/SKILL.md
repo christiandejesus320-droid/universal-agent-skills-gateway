@@ -2,7 +2,7 @@
 name: universal-agent-workspace
 description: Una skill única, portable y autónoma que combina pensamiento de producto, arquitectura, implementación, diseño UI, QA, seguridad, investigación, datos, documentación, automatización y release en un flujo operativo universal para cualquier modelo o agente que soporte Agent Skills.
 license: MIT
-compatibility: Portable como un único SKILL.md. No requiere gateway, API, Node.js, Python, MCP, Claude ni un proveedor específico.
+compatibility: Portable como un único SKILL.md. No requiere servicios externos, código, SDKs, MCP ni un proveedor específico.
 metadata:
   version: 2026.1
   mode: universal-single-skill
@@ -16,9 +16,9 @@ metadata:
 
 ## What this skill is / Qué es esta skill
 
-**EN:** This is one self-contained operating skill. It teaches an agent how to understand the request, select the right capability, plan, build, inspect, test, review, document, and close the work with evidence. It is written as instructions, not as a server, gateway, plugin, or provider integration.
+**EN:** This is one self-contained operating skill. It teaches an agent how to understand the request, select the right capability, plan, build, inspect, test, review, document, and close the work with evidence. It is written as portable instructions, not as a server, plugin, or provider integration.
 
-**ES:** Esta es una única skill operativa y autocontenida. Enseña al agente a entender la petición, seleccionar la capacidad correcta, planificar, construir, inspeccionar, probar, revisar, documentar y cerrar el trabajo con evidencia. Está escrita como instrucciones, no como servidor, gateway, plugin ni integración de proveedor.
+**ES:** Esta es una única skill operativa y autocontenida. Enseña al agente a entender la petición, seleccionar la capacidad correcta, planificar, construir, inspeccionar, probar, revisar, documentar y cerrar el trabajo con evidencia. Está escrita como instrucciones portables, no como servidor, plugin ni integración de proveedor.
 
 ## Core operating loop / Bucle operativo central
 
@@ -253,3 +253,77 @@ Una tarea termina cuando el problema está explícito, se seleccionó el conjunt
 ## Source fidelity / Fidelidad de fuentes
 
 This single skill consolidates the operating model of gstack and the portable Agent Skills convention while keeping upstream repositories unchanged. It is an instruction layer, not a replacement or modified copy of upstream repositories.
+
+## Engineering operating model / Modelo operativo de ingeniería
+
+**EN:** Use these layers as a reasoning map, not as a required software runtime: Core → Discovery → Planning → Design/Build → Verification → Delivery → Observe → Improve. The current agent may have tools or may have none; adapt the plan to what is actually available.
+
+**ES:** Usa estas capas como mapa de razonamiento, no como runtime obligatorio: Core → Discovery → Planning → Design/Build → Verification → Delivery → Observe → Improve. El agente puede tener herramientas o no tener ninguna; adapta el plan a lo que realmente esté disponible.
+
+### Understand before modify / Entender antes de modificar
+
+Before changing an existing project, inspect its language, framework, runtime, package manager, build system, database, ORM, API shape, deployment target, CI/CD, authentication, environment variables, tests, linting, type system, containers, observability, monorepo and workspace boundaries. Never invent a project structure that has not been inspected.
+
+Antes de modificar un proyecto existente, inspecciona lenguaje, framework, runtime, package manager, build system, base de datos, ORM, forma de API, destino de despliegue, CI/CD, autenticación, variables de entorno, tests, linting, sistema de tipos, contenedores, observabilidad y límites de monorepo/workspace. Nunca inventes una estructura que no haya sido inspeccionada.
+
+### Human–AI contract / Contrato humano–IA
+
+Every meaningful operation uses this portable contract:
+
+```yaml
+task: "..."
+intent: "..."
+context: []
+constraints: []
+inputs: []
+outputs: []
+dependencies: []
+risk: low | medium | high
+permissions: []
+validation: []
+rollback: []
+```
+
+This communicates intent only. It does not grant permissions and does not pretend that a model can enforce filesystem, network or production controls by itself.
+
+Este formato sólo comunica intención. No concede permisos ni pretende que un modelo pueda imponer por sí mismo controles de filesystem, red o producción.
+
+### Capability planning / Planificación de capabilities
+
+Declare requested actions such as `filesystem.read`, `filesystem.write`, `git.read`, `git.write`, `browser.read`, `browser.interact`, `network.request`, `database.read`, `database.write`, `process.execute`, `model.generate`, `tool.execute`, `deployment.preview` and `deployment.production`. Classify each as `allowed`, `needs_confirmation`, `unavailable` or `not_needed` according to the actual host.
+
+Declara acciones solicitadas como `filesystem.read`, `filesystem.write`, `git.read`, `git.write`, `browser.read`, `browser.interact`, `network.request`, `database.read`, `database.write`, `process.execute`, `model.generate`, `tool.execute`, `deployment.preview` y `deployment.production`. Clasifica cada una como `allowed`, `needs_confirmation`, `unavailable` o `not_needed` según el host real.
+
+### Policy reasoning / Razonamiento de policy
+
+Propose read-only by default; limit writes to the stated workspace; limit network to declared sources; never print secrets; require confirmation for arbitrary shell, destructive operations, external messaging and production deployment. If the host provides a real policy or sandbox, use it. Otherwise state that this instruction is advisory and stop before the side effect.
+
+Propón sólo lectura por defecto; limita escrituras al workspace indicado; limita red a las fuentes declaradas; nunca imprimas secretos; exige confirmación para shell arbitrario, operaciones destructivas, mensajería externa y deploy a producción. Si el host ofrece una policy o sandbox real, úsala. Si no, declara que esta instrucción es orientativa y detente antes del efecto.
+
+### Verification and artifacts / Verificación y artefactos
+
+For substantial tasks, select checks appropriate to the stack: typecheck, lint, unit tests, integration tests, build, security, dependency validation, configuration validation, runtime health, performance, rollback and documentation. Track artifacts with `id`, `type`, `path_or_reference`, `hash_if_available`, `created_at` and `task_id` when supported. Never invent hashes, logs or test results.
+
+Para tareas sustanciales, selecciona checks adecuados al stack: typecheck, lint, tests unitarios, integración, build, seguridad, dependencias, configuración, health runtime, rendimiento, rollback y documentación. Registra artefactos con `id`, `type`, `path_or_reference`, `hash_if_available`, `created_at` y `task_id` cuando sea posible. Nunca inventes hashes, logs ni resultados.
+
+### Current documentation / Documentación actual
+
+Use `current documentation > tool help > repository evidence > memory > assumptions`. If a framework, CLI, SDK or protocol may have changed, verify current documentation when available. Without browsing or documentation access, state uncertainty and avoid version-specific claims.
+
+Usa `documentación actual > help de la herramienta > evidencia del repositorio > memoria > supuestos`. Si un framework, CLI, SDK o protocolo puede haber cambiado, verifica documentación actual cuando exista. Sin browsing o documentación, declara incertidumbre y evita afirmaciones específicas de versión.
+
+### Optional adapters / Adaptadores opcionales
+
+MCP, model routers, tool registries, sandboxes, task stores, telemetry, caches and provider adapters may exist in a host, but none is a prerequisite of this skill. Discover schemas and permissions before use; otherwise continue with Markdown, files and native host capabilities.
+
+MCP, routers de modelos, tool registries, sandboxes, task stores, telemetría, cachés y adapters pueden existir en un host, pero ninguno es requisito de esta skill. Descubre schemas y permisos antes de usarlos; si no existen, continúa con Markdown, archivos y capacidades nativas del host.
+
+## Correction of common misinterpretations / Corrección de interpretaciones comunes
+
+A **catalog entry is not an executable skill**. A source repository is not automatically trusted. A capability declaration is not enforcement. A Markdown policy is not a sandbox. A model response is not evidence. A generated plan is not deployment authorization.
+
+Una **entrada de catálogo no es una skill ejecutable**. Un repositorio fuente no es automáticamente confiable. Declarar una capability no es enforcement. Una policy en Markdown no es un sandbox. Una respuesta del modelo no es evidencia. Un plan generado no es autorización de despliegue.
+
+This keeps the single skill honest and portable across Claude, GPT, Gemini, Codex, local models, IDE agents and plain Markdown workflows.
+
+Esto mantiene honesta y portable la skill única entre Claude, GPT, Gemini, Codex, modelos locales, agentes IDE y flujos basados sólo en Markdown.
