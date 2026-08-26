@@ -22,13 +22,13 @@ Start by asking: **What problem is visible? / ¿Qué problema se ve?** Then sear
 
 ## Model workflow / Flujo para modelos
 
-Load `skills/design-ui-library/SKILL.md`. Read `library/design-catalog.json` only after identifying the task category. Return a structured brief with `problem`, `purpose`, `when_to_use`, `inputs`, `outputs`, `states`, `tokens`, `accessibility`, `responsive`, `performance`, and `acceptance`. Never output a component without explaining which user problem it resolves.
+Load `skills/universal-agent-workspace/SKILL.md`. Read `library/design-catalog.json` only after identifying the task category. Return a structured brief with `problem`, `purpose`, `when_to_use`, `inputs`, `outputs`, `states`, `tokens`, `accessibility`, `responsive`, `performance`, and `acceptance`. Never output a component without explaining which user problem it resolves.
 
 ## Optional MCP / MCP opcional
 
-The file `mcp-tools.schema.json` defines the read-only operations. A compatible MCP adapter may expose them as `get_design_tokens`, `render_component`, and `search_ui_catalog`. The library remains complete without a running server: the JSON catalog and Markdown skills are the source of truth.
+The file `mcp-tools.schema.json` defines the read-only operations. A compatible MCP adapter may expose them as `get_design_tokens`, `render_component`, and `search_ui_catalog`. The library remains complete without a running server: the JSON catalog and the single Markdown skill are the source of truth.
 
-El archivo `mcp-tools.schema.json` define operaciones de solo lectura. Un adaptador MCP compatible puede exponerlas como `get_design_tokens`, `render_component` y `search_ui_catalog`. La biblioteca sigue completa sin un servidor activo: el JSON del catálogo y las skills Markdown son la fuente de verdad.
+El archivo `mcp-tools.schema.json` define operaciones de solo lectura. Un adaptador MCP compatible puede exponerlas como `get_design_tokens`, `render_component` y `search_ui_catalog`. La biblioteca sigue completa sin un servidor activo: el JSON del catálogo y la única skill Markdown son la fuente de verdad.
 
 ## Visual references / Referencias visuales
 
