@@ -433,7 +433,7 @@ next_step: "..."
 For simple work, return only the requested result plus minimum verification. This protocol controls context and output length; it does not override safety, authorization or host permissions.
 
 Para tareas simples, devuelve sólo el resultado solicitado y la verificación mínima. Este protocolo controla contexto y longitud; no sustituye seguridad, autorización ni permisos del host.
-
+For existing files, use patch or search/replace only; after a phase or worker passes, retain only the net artifact and evidence, then stop at the agreed definition of done. Read `references/efficiency-engines.md` only for long, multi-agent or error-prone work. / En archivos existentes, usa sólo patch o search/replace; tras validar una fase o worker conserva sólo el artefacto neto y la evidencia, y detente al cumplir el plan. Lee `references/efficiency-engines.md` sólo en trabajos largos, multiagente o con errores.
 ## Multi-agent architecture / Arquitectura multiagente
 Activate this mode only when the task is genuinely complex, modular or exceeds one controlled linear execution. Do not launch agents by default. Activa este modo sólo cuando la tarea sea realmente compleja, modular o exceda una ejecución lineal controlada. No lances agentes por default.
 ### Leader protocol / Protocolo del líder

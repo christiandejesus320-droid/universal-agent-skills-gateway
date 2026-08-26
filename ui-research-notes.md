@@ -26,3 +26,15 @@ La biblioteca será declarativa y portable. La UI servirá como catálogo humano
 ## Inspección visual del prototipo
 
 La interfaz renderizada muestra correctamente un shell de tres columnas en escritorio con rail de navegación de 260px, canvas principal e inspector lateral; el hero comunica el propósito de la biblioteca, el catálogo tiene filtros por nivel, y existen vistas de Tokens, Playground y MCP Context. La vista textual confirma que el layout incluye los estados Idle, Loading, Success y Error, además de los tres nombres de herramientas MCP. El acceso visual temporal se verificó en el servidor local expuesto.
+
+## Token economy research for universal skill
+
+Anthropic defines context engineering as curating the smallest possible set of high-signal tokens for the desired outcome and warns that larger context can reduce focus through context rot and limited attention budget. It recommends just-in-time context, progressive disclosure, clear system sections and compaction for long-running agent sessions.
+
+Martin Fowler distinguishes instructions from guidance and treats skills as context interfaces that should be loaded on demand. He recommends gradual growth, scoped rules, transparency about context usage and avoiding indiscriminate context dumps.
+
+Applied rule for this repository: separate intent, plan, research, execution and validation; use exact queries; prefer patches over full rewrites; transfer only validated net artifacts between sub-agents; stop immediately at the hard definition of done.
+
+Sources:
+- https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+- https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html
