@@ -155,3 +155,9 @@ La siguiente iteración debe añadir un lockfile de skills con commit y hash SHA
 [3]: https://github.com/garrytan/gstack "gstack — software factory for Claude Code and other agents"
 
 [4]: https://www.skills.sh/ "The Agent Skills Directory"
+
+## Skill única portable / Portable single skill
+
+La entrega principal para cualquier modelo es `skills/universal-agent-workspace/SKILL.md`. El paquete independiente `/home/ubuntu/universal-agent-workspace/` contiene únicamente ese archivo. Puede copiarse como una carpeta de skill en cualquier agente que soporte el formato Agent Skills; no necesita instalar Node.js, Python, Webpack, Pylint, MCP, un gateway ni una API.
+
+The primary deliverable for any model is `skills/universal-agent-workspace/SKILL.md`. The standalone package contains only that file and can be copied into any Agent Skills-compatible agent. It is an instruction layer, not a server or provider integration. The optional catalog UI and server remain separate support tooling and are not required to use the skill.
