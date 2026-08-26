@@ -394,7 +394,7 @@ Una **entrada de catálogo no es una skill ejecutable**. Un repositorio fuente n
 
 This keeps the single skill honest and portable across Claude, GPT, Gemini, Codex, local models, IDE agents and plain Markdown workflows.
 
-Esto mantiene honesta y portable la skill única entre Claude, GPT, Gemini, Codex, modelos locales, agentes IDE y flujos basados sólo en Markdown.
+Esto mantiene honesta y portable la skill única entre Claude, GPT, Gemini, Codex, modelos locales, agentes IDE y flujos basados sólo en Markdown. For code, architecture, UI, AI, data, security or production work, read `references/engineering-standards.md` only when the task requires it. / Para código, arquitectura, UI, IA, datos, seguridad o producción, lee `references/engineering-standards.md` sólo cuando la tarea lo requiera.
 
 ## Ultra-efficient execution / Ejecución ultraeficiente
 

@@ -38,3 +38,10 @@ Applied rule for this repository: separate intent, plan, research, execution and
 Sources:
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html
+
+## Engineering standards research
+
+- TypeScript official documentation: `strict` enables a broad family of type checks that provide stronger correctness guarantees; future TypeScript versions may add stricter checks, so the skill should require strict mode but verify project-specific compatibility.
+- OWASP ASVS is a basis for testing web application security controls and provides developer requirements for secure development. Its v5.0.0 requirements include injection prevention and explicit versioned references.
+- Applied rule: treat strict typing, runtime validation, input sanitization, authorization, parameterized queries and versioned security checks as requirements when the task actually involves them, not as unconditional implementation of infrastructure.
+- Sources: https://www.typescriptlang.org/tsconfig/strict.html ; https://owasp.org/www-project-application-security-verification-standard/
