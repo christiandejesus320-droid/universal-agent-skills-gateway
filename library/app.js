@@ -8,6 +8,7 @@ async function loadCatalog() {
   state.data = await response.json();
   $('#componentCount').textContent = state.data.components.length;
   renderTokens();
+  renderWorkflow();
   renderGrid();
 }
 
@@ -47,6 +48,12 @@ function showInspector(id) {
   $('#copyPrompt').addEventListener('click', () => navigator.clipboard?.writeText(`${text(component.name)}\nProblem: ${text(component.problem)}\nPurpose: ${text(component.purpose)}\nTags: ${(component.tags ?? []).join(', ')}`));
 }
 
+function renderWorkflow() {
+  const phases = ['Discover / Descubrir','Diagnose / Diagnosticar','Select / Seleccionar','Compose / Componer','Blueprint / Definir blueprint','Preview / Previsualizar','Validate / Validar','Implement / Implementar','Review / Revisar','Ship / Publicar','Reflect / Aprender'];
+  const workflow = state.data.workflows?.[0];
+  $('#workflowTrack').innerHTML = (workflow?.phases ?? phases).map((phase, index) => `<article class="workflow-step"><span>${String(index + 1).padStart(2, '0')}</span><h3>${phase.includes(' / ') ? phase : phase}</h3><p>${index === 0 ? 'Clarify the outcome / Aclara el resultado' : index === 1 ? 'Name the friction / Nombra la fricción' : index === 2 ? 'Choose the smallest skill / Elige la skill mínima' : index === 9 ? 'Require human authorization / Requiere autorización humana' : 'Produce evidence / Produce evidencia'}</p></article>`).join('');
+}
+
 function renderTokens() {
   const tokens = state.data.tokens;
   const colors = Object.entries(tokens.colors.oled).map(([key, value]) => `<div class="swatch"><i style="background:${value}"></i><span>${key}</span><strong>${value}</strong></div>`).join('');
@@ -56,7 +63,7 @@ function renderTokens() {
 }
 
 function selectView(view) {
-  ['catalog','tokens','playground','mcp'].forEach((name) => $(`#${name}View`)?.classList.toggle('hidden', name !== view));
+  ['catalog','tokens','playground','mcp','workflow'].forEach((name) => $(`#${name}View`)?.classList.toggle('hidden', name !== view));
   $$('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
   if (view === 'catalog') $('#catalogView').classList.remove('hidden'); else $('#catalogView').classList.add('hidden');
   if (view === 'catalog') $('.control-bar').classList.remove('hidden'); else $('.control-bar').classList.add('hidden');

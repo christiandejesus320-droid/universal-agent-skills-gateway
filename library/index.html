@@ -17,6 +17,7 @@
         <button class="nav-item" data-view="tokens"><span>◈</span><span>Tokens / Tokens</span><kbd>G T</kbd></button>
         <button class="nav-item" data-view="playground"><span>◉</span><span>Playground / Laboratorio</span><kbd>G P</kbd></button>
         <button class="nav-item" data-view="mcp"><span>↯</span><span>MCP Context / Contexto</span><kbd>G M</kbd></button>
+        <button class="nav-item" data-view="workflow"><span>→</span><span>Workflow / Flujo</span><kbd>G W</kbd></button>
       </nav>
       <div class="sidebar-footer"><div class="live-dot"></div><span>Library sync / Sincronización</span><strong id="syncState">LIVE</strong></div>
     </aside>
@@ -49,6 +50,11 @@
       <section class="secondary-view hidden" id="playgroundView">
         <div class="section-heading"><div><div class="eyebrow">PLAYGROUND / LABORATORIO</div><h2>See the state, not just the shape.</h2><p>Preview loading, success, error, focus and reduced-motion behavior. Previsualiza estados reales.</p></div></div>
         <div class="playground-card"><div class="playground-controls"><button class="outline-button state-button active" data-state="idle">Idle</button><button class="outline-button state-button" data-state="loading">Loading</button><button class="outline-button state-button" data-state="success">Success</button><button class="outline-button state-button" data-state="error">Error</button></div><div class="component-preview"><button id="demoButton" class="demo-primary">Save changes <span class="button-status"></span></button><p id="demoCaption">Primary action with immediate feedback / Acción primaria con feedback inmediato.</p></div></div>
+      </section>
+
+      <section class="secondary-view hidden" id="workflowView">
+        <div class="section-heading"><div><div class="eyebrow">OPERATING SYSTEM / SISTEMA OPERATIVO</div><h2>Design-to-Production Loop.</h2><p>From a visible problem to an authorized release. Del problema visible al release autorizado.</p></div></div>
+        <div class="workflow-track" id="workflowTrack"></div>
       </section>
 
       <section class="secondary-view hidden" id="mcpView">
