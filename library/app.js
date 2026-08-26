@@ -65,13 +65,17 @@ function renderTokens() {
 function selectView(view) {
   ['catalog','tokens','playground','mcp','workflow'].forEach((name) => $(`#${name}View`)?.classList.toggle('hidden', name !== view));
   $$('.nav-item').forEach((item) => item.classList.toggle('active', item.dataset.view === view));
-  if (view === 'catalog') $('#catalogView').classList.remove('hidden'); else $('#catalogView').classList.add('hidden');
+  if (view === 'catalog') { $('#catalogView').classList.remove('hidden'); $('.entry-maps').classList.remove('hidden'); }
+  else { $('#catalogView').classList.add('hidden'); $('.entry-maps').classList.add('hidden'); }
   if (view === 'catalog') $('.control-bar').classList.remove('hidden'); else $('.control-bar').classList.add('hidden');
 }
 
 $('#searchInput').addEventListener('input', (event) => { state.query = event.target.value; renderGrid(); });
 $$('.filter-chip').forEach((chip) => chip.addEventListener('click', () => { state.level = chip.dataset.level; $$('.filter-chip').forEach((item) => item.classList.toggle('active', item === chip)); renderGrid(); }));
 $$('.nav-item').forEach((item) => item.addEventListener('click', () => selectView(item.dataset.view)));
+$$('.entry-map').forEach((item) => item.addEventListener('click', () => { selectView(item.dataset.view); $('.main-canvas').scrollTo({ top: 0, behavior: 'smooth' }); }));
+$('#openWorkspace').addEventListener('click', () => { $('#controlBar')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); $('#searchInput').focus(); });
+$('#openSkillMap').addEventListener('click', () => $('#entryMapsTitle').scrollIntoView({ behavior: 'smooth', block: 'center' }));
 $('#langToggle').addEventListener('click', () => { state.language = state.language === 'en' ? 'es' : 'en'; renderGrid(); if (state.selected) showInspector(state.selected.id); });
 $('#copyTokens').addEventListener('click', () => navigator.clipboard?.writeText(JSON.stringify(state.data.tokens, null, 2)));
 

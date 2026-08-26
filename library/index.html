@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Universal bilingual Design & UI Skill Library / Biblioteca bilingüe de Design & UI Skills" />
-  <title>Universal Design & UI Skill Library</title>
+  <meta name="description" content="Universal Agent Workspace: a portable, model-neutral skill for deliberate, evidence-based agent execution." />
+  <title>Universal Agent Workspace · Skill Library</title>
   <link rel="stylesheet" href="/library/styles.css" />
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" aria-label="Primary navigation / Navegación principal">
       <div class="brand-mark"><span class="brand-dot"></span><span>U/DS</span></div>
-      <div class="brand-copy">Universal Design Systems<br><span>Biblioteca de skills UI</span></div>
+      <div class="brand-copy">Universal Agent Workspace<br><span>Biblioteca portable de skills</span></div>
       <nav class="nav-stack">
         <button class="nav-item active" data-view="catalog"><span>▦</span><span>Catalog / Catálogo</span><kbd>G C</kbd></button>
         <button class="nav-item" data-view="tokens"><span>◈</span><span>Tokens / Tokens</span><kbd>G T</kbd></button>
@@ -24,19 +24,33 @@
 
     <main class="main-canvas">
       <header class="topbar">
-        <div class="breadcrumb"><span>Workspace</span><span>/</span><strong>Design & UI Skills</strong></div>
+        <div class="breadcrumb"><span>Workspace</span><span>/</span><strong>Universal Agent Workspace</strong></div>
         <div class="top-actions"><button id="langToggle" class="quiet-button" type="button">EN / ES</button><button class="quiet-button" type="button" id="commandButton">⌘K <span>Commands</span></button><button class="avatar" aria-label="User profile">CD</button></div>
       </header>
 
       <section class="hero-block" id="catalogView">
-        <div class="eyebrow">CATALOG / CATÁLOGO · v2026.1</div>
-        <h1>Build interfaces<br><em>with intent.</em></h1>
-        <p class="hero-lede">A human-readable library of skills that explains the problem before the pixels. <span>Una biblioteca legible que explica el problema antes de los píxeles.</span></p>
-        <div class="hero-meta"><span class="metric"><strong id="componentCount">12</strong><small>patterns / patrones</small></span><span class="metric"><strong>4</strong><small>atomic levels / niveles</small></span><span class="metric"><strong>14</strong><small>tags / etiquetas</small></span></div>
+        <div class="hero-copy">
+          <div class="eyebrow">UNIVERSAL AGENT WORKSPACE · v2026.1</div>
+          <h1>Make the agent<br><em>work on purpose.</em></h1>
+          <p class="hero-lede">A portable operating skill for any model: understand first, plan small, research only blockers, execute surgically, prove the result. <span>Una skill operativa portable para cualquier modelo: entender primero, planificar corto, investigar sólo bloqueos, ejecutar con precisión y demostrar el resultado.</span></p>
+          <div class="hero-actions"><button class="primary-button" id="openWorkspace" type="button">Explore the method <span>Explorar el método</span> →</button><button class="text-button" id="openSkillMap" type="button">See the maps / Ver los mapas</button></div>
+          <div class="hero-meta"><span class="metric"><strong>1</strong><small>portable skill / skill portable</small></span><span class="metric"><strong>100</strong><small>routed capabilities / capacidades</small></span><span class="metric"><strong>0</strong><small>gateway required / gateway requerida</small></span></div>
+        </div>
+        <figure class="hero-visual"><img src="/library/assets/universal-skill-token-control-laptop-only.png" alt="Laptop showing the Universal Agent Workspace method and token control interface" /><figcaption><span class="status-pip"></span>Context under control / Contexto bajo control</figcaption><div class="hero-callout callout-top">THINK → PLAN → BUILD</div><div class="hero-callout callout-bottom">EVIDENCE + STOP</div></figure>
       </section>
 
-      <section class="control-bar" aria-label="Catalog controls / Controles del catálogo">
-        <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search a problem, pattern, or tag / Buscar problema, patrón o etiqueta" autocomplete="off" /><kbd>⌘ K</kbd></label>
+      <section class="entry-maps" aria-labelledby="entryMapsTitle">
+        <div class="entry-section-label"><span class="eyebrow">THE OPERATING METHOD / EL MÉTODO OPERATIVO</span><h2 id="entryMapsTitle">See how the skill thinks before it acts.</h2></div>
+        <div class="map-grid">
+          <button class="entry-map" data-view="workflow" type="button"><img src="/library/assets/map-control-loop.png" alt="Control loop map / Mapa del bucle de control" /><span><b>01</b><strong>Control loop</strong><small>Bucle de control</small></span></button>
+          <button class="entry-map" data-view="catalog" type="button"><img src="/library/assets/map-skill-selection.png" alt="Skill selection map / Mapa de selección de skills" /><span><b>02</b><strong>Capability routing</strong><small>Selección de capacidades</small></span></button>
+          <button class="entry-map" data-view="tokens" type="button"><img src="/library/assets/map-ui-atomic.png" alt="UI atomic map / Mapa atómico de UI" /><span><b>03</b><strong>Atomic UI</strong><small>UI atómica</small></span></button>
+          <button class="entry-map" data-view="playground" type="button"><img src="/library/assets/map-pause-on-error.png" alt="Pause on error map / Mapa de pausa ante error" /><span><b>04</b><strong>Pause on error</strong><small>Pausa ante error</small></span></button>
+        </div>
+      </section>
+
+      <section class="control-bar" id="controlBar" aria-label="Catalog controls / Controles del catálogo">
+          <label class="search-field"><span>⌕</span><input id="searchInput" type="search" placeholder="Search a problem, pattern, or tag / Buscar problema, patrón o etiqueta" autocomplete="off" /><kbd>⌘ K</kbd></label>
         <div class="filter-row"><button class="filter-chip active" data-level="all">All / Todo</button><button class="filter-chip" data-level="atom">Atoms / Átomos</button><button class="filter-chip" data-level="molecule">Molecules / Moléculas</button><button class="filter-chip" data-level="organism">Organisms / Organismos</button><button class="filter-chip" data-level="layout">Layouts</button></div>
       </section>
 
@@ -63,7 +77,7 @@
       </section>
     </main>
 
-    <aside class="inspector" id="inspector" aria-label="Component inspector / Inspector de componente"><div class="inspector-empty"><div class="empty-icon">✦</div><h3>Select a pattern<br><span>Selecciona un patrón</span></h3><p>Understand the problem it solves, then compose it into your system.</p></div></aside>
+    <aside class="inspector" id="inspector" aria-label="Workspace orientation / Orientación del workspace"><div class="inspector-empty welcome-inspector"><div class="empty-icon">✦</div><div class="eyebrow">HOW TO READ THIS / CÓMO LEERLO</div><h3>One method.<br><span>Every model.</span></h3><p>The cards below are the visual index. The portable `SKILL.md` is the operating layer that tells the agent how to work.</p><div class="orientation-list"><div><b>01</b><span>Understand before acting<br><small>Entender antes de actuar</small></span></div><div><b>02</b><span>Route only what is needed<br><small>Seleccionar sólo lo necesario</small></span></div><div><b>03</b><span>Finish with evidence<br><small>Cerrar con evidencia</small></span></div></div></div></aside>
   </div>
   <dialog id="commandDialog"><div class="dialog-inner"><div class="dialog-title">Command palette / Paleta de comandos <kbd>ESC</kbd></div><input id="commandInput" placeholder="Type a command / Escribe un comando" /><div class="command-list"><button data-command="catalog">Go to Catalog / Ir al catálogo</button><button data-command="tokens">Inspect Tokens / Inspeccionar tokens</button><button data-command="playground">Open Playground / Abrir laboratorio</button><button data-command="mcp">MCP Context / Contexto MCP</button></div></div></dialog>
   <script type="module" src="/library/app.js"></script>
