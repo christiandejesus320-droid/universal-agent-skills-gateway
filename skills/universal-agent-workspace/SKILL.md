@@ -2,7 +2,6 @@
 name: universal-agent-workspace
 description: Una skill única, portable y autónoma que combina pensamiento de producto, arquitectura, implementación, diseño UI, QA, seguridad, investigación, datos, documentación, automatización y release en un flujo operativo universal para cualquier modelo o agente que soporte Agent Skills.
 license: MIT
-compatibility: Portable como un único SKILL.md. No requiere servicios externos, código, SDKs, MCP ni un proveedor específico.
 metadata:
   version: 2026.1
   mode: universal-single-skill
@@ -361,6 +360,44 @@ Una **entrada de catálogo no es una skill ejecutable**. Un repositorio fuente n
 This keeps the single skill honest and portable across Claude, GPT, Gemini, Codex, local models, IDE agents and plain Markdown workflows.
 
 Esto mantiene honesta y portable la skill única entre Claude, GPT, Gemini, Codex, modelos locales, agentes IDE y flujos basados sólo en Markdown.
+
+## Ultra-efficient execution / Ejecución ultraeficiente
+
+Apply these rules on every turn and for every model:
+
+1. **Targeted context / Contexto dirigido:** read only the request, current state and files required for the next decision. Do not load the complete catalog without a specific reason.
+2. **Minimal plan / Plan mínimo:** before complex work, output only `objective`, a 3–5 step `plan`, `scope`, `out_of_scope` and `blockers`. Skip it only when the user explicitly asks for direct execution.
+3. **Surgical execution / Ejecución quirúrgica:** make the smallest reversible change. Do not add decorative prose, unrequested features, duplicate explanations or speculative infrastructure.
+4. **Targeted research / Investigación dirigida:** investigate only the exact unknown blocking progress. If an error appears, pause, inspect that error, patch its smallest cause and resume.
+5. **Compact output / Salida compacta:** begin with the result or next decision. Do not restate the prompt, repeat known context or add generic introductions.
+6. **Progressive loading / Carga progresiva:** load one skill, reference or catalog slice at a time and stop when the next action is determined.
+7. **Evidence density / Densidad de evidencia:** prefer an exact path, command, test result, diff or compact table over a long explanation.
+8. **Token stop rule / Regla de parada de tokens:** when the answer is sufficient to act and verify, stop. More text is not more quality.
+
+### Three-phase protocol / Protocolo de tres fases
+
+| Phase / Fase | Do / Hacer | Avoid / Evitar |
+| --- | --- | --- |
+| **Context audit / Auditoría** | Identify objective, bounds, missing blocker and current artifacts. | Broad search, assumptions and duplicated context. |
+| **Blueprint / Blueprint** | State objective, 3–5 actions, scope limits and risks. | Full implementation before the plan when complexity requires it. |
+| **Execute and verify / Ejecutar y verificar** | Implement, test, report evidence and stop at confirmation gates. | Over-engineering, invented results and silent side effects. |
+
+For complex work, return this compact contract:
+
+```yaml
+objective: "one sentence"
+plan: ["step 1", "step 2", "step 3"]
+scope: ["included item"]
+out_of_scope: ["omitted item"]
+blockers: []
+actions: []
+evidence: []
+next_step: "..."
+```
+
+For simple work, return only the requested result plus minimum verification. This protocol controls context and output length; it does not override safety, authorization or host permissions.
+
+Para tareas simples, devuelve sólo el resultado solicitado y la verificación mínima. Este protocolo controla contexto y longitud; no sustituye seguridad, autorización ni permisos del host.
 
 ## Skill creation mode / Modo de creación de skills
 
