@@ -130,7 +130,7 @@ Para UI usa `TOKENS → ÁTOMOS → MOLÉCULAS → ORGANISMOS → LAYOUT`. Empie
 
 Use 3D, Canvas or Remotion only when it improves comprehension, interaction or storytelling. Define fallback, reduced-motion behavior, frame budget, camera/scene intent, loading state and accessibility alternative. Never add animation merely for decoration.
 
-Usa 3D, Canvas o Remotion sólo cuando mejore comprensión, interacción o storytelling. Define fallback, reduced motion, presupuesto de frames, intención de cámara/escena, loading y alternativa accesible. Nunca añadas animación sólo por decoración. Para branding, lujo digital, portfolio o dirección de arte, lee `references/luxury-digital-design-system.md` bajo demanda. / For branding, luxury digital, portfolio or art direction, read it on demand.
+Usa 3D, Canvas o Remotion sólo cuando mejore comprensión, interacción o storytelling. Define fallback, reduced motion, presupuesto de frames, intención de cámara/escena, loading y alternativa accesible. Nunca añadas animación sólo por decoración. Para branding, lujo digital, portfolio o dirección de arte, lee `references/luxury-digital-design-system.md` bajo demanda. Para WebGL, Three.js, GLSL, WebGPU, motion, shaders o documentación creativa, lee `references/creative-documentation-system.md` bajo demanda. / For branding, luxury digital, portfolio or art direction, read it on demand; for creative coding or documentation, read `references/creative-documentation-system.md` on demand.
 
 ## Output contract / Contrato de salida
 

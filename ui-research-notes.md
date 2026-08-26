@@ -77,3 +77,27 @@ Siteinspire structures inspiration through searchable, curated filters such as p
 Awwwards combines discovery, nominees, winners, education, collections, directory and marketplace. It exposes a public score and uses categories around web design, UX/UI, animation and technology. Transferable principles: evaluate craft across multiple dimensions, separate inspiration from learning and delivery, and turn subjective quality into an explicit review rubric without treating the score as absolute truth.
 
 Sources: https://www.siteinspire.com/ ; https://www.awwwards.com/
+
+## Documentation and creative engineering research: Codrops and Active Theory
+
+Codrops separates Creative Hub, curated inspiration, case studies and practical step-by-step tutorials. Its current topics include Three.js, GLSL, WebGPU, Blender workflows, GSAP timelines, dynamic CMS data, depth maps, games and CRT effects. Transferable method: explain concept, demo, implementation path and technical constraints separately; connect visual intent to code; expose a runnable or inspectable result; keep advanced techniques optional rather than forcing them into every project.
+
+Active Theory describes an in-house team that blends story, art and technology and explicitly pairs an advanced web toolset with quality and performance. Transferable method: establish narrative intent, build a reusable technical foundation, define a quality/performance bar and make the case study explain why the technology exists, not only what it does.
+
+Sources: https://tympanus.net/codrops/ ; https://activetheory.net/
+
+## Documentation and creative engineering research: Cuberto and Stripe
+
+Cuberto presents a process spanning product strategy, UX research, interface design, creative development, motion and 3D. Transferable method: validate flows and usability before visual polish, then add advanced interaction only where it creates a product advantage.
+
+Stripe's engineering blog organizes public knowledge by engineering, infrastructure, testing, security, developer productivity, AI and workflows. Recent public topics include selective testing, state machines, graph search, database reliability, agentic coding and interactive documentation. Transferable method: document the reason, constraints, architecture, trade-offs, verification and operational result; use state machines and selective testing when complexity warrants them.
+
+Sources: https://cuberto.com/ ; https://stripe.dev/blog/topic/engineering
+
+## Documentation and community research: Shadertoy and Readymag
+
+Shadertoy was protected by a browser verification page during review, so no content was treated as verified beyond the public access barrier. The practical principle remains to use shader communities as executable experiments: isolate a visual equation, expose parameters, show the result, explain the math and state performance constraints. If a source is blocked, do not invent its content or bypass its protection.
+
+Readymag Design Stories presents an archive of influential designers and explains that stories are built with an interactive graphical editor. Transferable principles: use editorial sequencing, let typography and composition carry the narrative, explain the historical or conceptual reason for a choice, and treat the interactive format as part of the story.
+
+Sources: https://www.shadertoy.com/ ; https://readymag.com/designstories/
