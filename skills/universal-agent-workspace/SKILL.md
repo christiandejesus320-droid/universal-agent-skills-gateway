@@ -93,6 +93,13 @@ Usa siempre la secuencia mínima aplicable. No actives las 100 capacidades a la 
 | --- | --- | --- |
 | **THINK / PENSAR** | Restate the objective, user, constraints, risk and missing information. / Reformula objetivo, usuario, restricciones, riesgo e información faltante. | Problem statement / Problema definido |
 | **PLAN / PLANIFICAR** | Select only the needed capabilities and define files, sequence, acceptance and stop conditions. / Selecciona sólo capacidades necesarias y define archivos, secuencia, aceptación y paradas. | Execution plan / Plan ejecutable |
+
+### Execution mode decision / Decisión del modo de ejecución
+
+If the problem is simple, execute directly in one thread using phases **THINK, PLAN and BUILD**; no workers or parallel research. / Si el problema es simple, ejecuta en un solo hilo con **THINK, PLAN y BUILD**; no actives workers ni investigación paralela.
+
+If the problem has independent parts such as database, API, interface and testing, activate **Multi-agent architecture / Arquitectura multiagente** after PLAN: decompose, assign one isolated role, send minimum context, define `in_scope` and `out_of_scope`, collect compact outputs and integrate once. Never launch agents before topology and boundaries. / Si hay partes independientes como base de datos, API, interfaz y testing, activa la arquitectura multiagente después de PLAN con el mismo orden y límites.
+
 | **BUILD / CONSTRUIR** | Implement the smallest reversible change with typed, readable, production-minded artifacts. / Implementa el cambio mínimo, reversible, tipado y legible. | Working artifact / Artefacto funcional |
 | **REVIEW / REVISAR** | Challenge assumptions, scope, security, UX, accessibility, edge cases and regressions. / Cuestiona supuestos, alcance, seguridad, UX, accesibilidad, casos límite y regresiones. | Findings with evidence / Hallazgos con evidencia |
 | **TEST / PROBAR** | Run the narrowest useful checks, then broaden only when risk requires it. / Ejecuta checks útiles y amplíalos sólo si el riesgo lo exige. | Test evidence / Evidencia de pruebas |
@@ -428,13 +435,10 @@ For simple work, return only the requested result plus minimum verification. Thi
 Para tareas simples, devuelve sólo el resultado solicitado y la verificación mínima. Este protocolo controla contexto y longitud; no sustituye seguridad, autorización ni permisos del host.
 
 ## Multi-agent architecture / Arquitectura multiagente
-
-Activate this mode only when the task is genuinely complex, modular or exceeds one controlled linear execution. Do not launch agents by default. Activa este modo sólo cuando la tarea sea realmente compleja, modular o exceda una ejecución lineal controlada. No lances agentes por defecto.
-
+Activate this mode only when the task is genuinely complex, modular or exceeds one controlled linear execution. Do not launch agents by default. Activa este modo sólo cuando la tarea sea realmente compleja, modular o exceda una ejecución lineal controlada. No lances agentes por default.
 ### Leader protocol / Protocolo del líder
 
 The primary agent is the **Architect and Leader**. Before delegation, define topology, shared objective, dependency order, ownership, integration point and stop conditions. Workers cannot delegate to other workers. El agente principal es el **Arquitecto y Líder**. Antes de delegar define topología, objetivo, dependencias, responsable, integración y paradas. Los workers no pueden delegar a otros workers.
-
 For each worker, send only this contract:
 
 ```yaml
@@ -446,7 +450,6 @@ context: ["minimum facts and references"]
 output: "compact JSON only"
 acceptance: ["checkable result"]
 ```
-
 ### Delegation sequence / Secuencia de delegación
 
 1. Decompose the task into independent units and identify dependencies. / Divide la tarea en unidades independientes e identifica dependencias.
@@ -456,14 +459,11 @@ acceptance: ["checkable result"]
 5. Collect outputs as JSON, validate them against acceptance and integrate once. / Recoge JSON, valida aceptación e integra una sola vez.
 6. If one worker fails, send a micro-fix only to that worker with the exact error. / Si falla uno, envía sólo a ese worker el error exacto.
 7. Remove coordination scaffolding from the final result and do not add unrequested features. / Elimina el andamiaje y no agregues funcionalidades no solicitadas.
-
 ### Worker output / Salida del worker
 ```json
 {"status":"done|blocked","role":"...","result":"...","files":[],"evidence":[],"blocker":null}
 ```
-
 Never pass the full conversation to a worker, duplicate ownership or run parallel research for dependent questions. Require confirmation before external, destructive or irreversible actions. Nunca pases la conversación completa a un worker, dupliques responsables ni ejecutes investigación paralela con preguntas dependientes. Exige confirmación antes de acciones externas, destructivas o irreversibles.
-
 ## Concept maps and visual context / Mapas conceptuales y contexto visual
 
 Load these resources only when the task requires architecture explanation, skill selection, UI composition, error recovery or a visual overview. Do not load all images or maps by default.
