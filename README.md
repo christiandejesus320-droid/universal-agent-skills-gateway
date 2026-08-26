@@ -1,163 +1,160 @@
-# Universal Design & UI Skill Library
+# Universal Agent Workspace
 
-Estoy construyendo un framework de ejecución para agentes y LLMs que evita que la IA empiece a escribir código o actuar a ciegas en cuanto recibe una orden. El flujo obliga al modelo a entender el objetivo, analizar el contexto disponible, investigar sólo lo que hace falta, proponer un plan corto con límites claros y ejecutar la solución sin sobreingeniería ni consumo fantasma de contexto.
+> **Una skill. Cualquier modelo. Trabajo real.**
+>
+> **One skill. Every model. Real work.**
 
-Mi objetivo es llevar este método a un nivel donde cualquier modelo pueda trabajar como un verdadero copiloto técnico: preciso antes de ser autónomo, capaz de explicar qué está haciendo, limitado por el alcance real de la tarea y obligado a validar el resultado antes de terminar. La skill principal es portable y no necesita una gateway, un proveedor específico, un servidor ni una API para funcionar.
+![Universal Agent Workspace — entrada visual](library/assets/entry-preview-desktop.png)
 
-## Qué incluye el proyecto
+Estoy construyendo una skill portable para resolver un problema concreto: que la IA no empiece a escribir código ni a ejecutar acciones a ciegas en cuanto recibe una orden.
 
-| Componente | Función | Estado |
+La skill obliga al agente a **entender el objetivo, revisar el contexto disponible, investigar sólo lo que bloquea el avance, proponer un plan corto, ejecutar el cambio mínimo y demostrar que terminó correctamente**. No intento crear otro chatbot ni otro gateway. Estoy creando una forma de trabajo reutilizable para cualquier modelo que pueda leer instrucciones en Markdown.
+
+I am building a portable skill for one specific problem: preventing an AI agent from writing code or taking action blindly as soon as it receives a request.
+
+The skill makes the agent **understand the objective, inspect available context, research only what blocks progress, propose a short plan, execute the smallest useful change, and prove completion**. This is not a chatbot and it is not a gateway. It is a reusable operating method for any model that can read Markdown instructions.
+
+## La idea en una imagen / The idea in one image
+
+![Laptop con la interfaz de control de contexto](library/assets/universal-skill-token-control-laptop-only.png)
+
+La interfaz visual representa el comportamiento que quiero conseguir: menos ruido, menos contexto desperdiciado y más evidencia. La skill no intenta cargar todo el conocimiento al principio. Primero muestra la ruta; después abre únicamente el recurso que hace falta.
+
+> **THINK → PLAN → BUILD → REVIEW → TEST → SHIP → REFLECT**
+
+## Qué problema resuelve / What problem it solves
+
+| Antes | Con Universal Agent Workspace |
+| --- | --- |
+| El agente empieza a programar sin entender el alcance. | Define el problema, las restricciones y lo que queda fuera. |
+| Investiga demasiado y consume contexto sin necesidad. | Investiga únicamente el bloqueo exacto. |
+| Mezcla arquitectura, código, pruebas y explicación en una sola salida. | Trabaja por fases con entregables pequeños y verificables. |
+| Activa muchos agentes sin límites claros. | Actúa como arquitecto principal y delega con contexto mínimo. |
+| Termina diciendo que “funciona” sin demostrarlo. | Cierra con checks, evidencia, riesgos y condición de parada. |
+| Depende de Claude, una API o un servicio intermediario. | Usa una única `SKILL.md` portable y neutral respecto al modelo. |
+
+## Cómo funciona / How it works
+
+### Primero: entender / First: understand
+
+El agente reformula el objetivo, identifica al usuario, reconoce las restricciones, clasifica el riesgo y registra la información que falta. Si no entiende el problema, todavía no está autorizado a construir.
+
+### Después: planificar / Then: plan
+
+Selecciona una capacidad principal y como máximo tres capacidades de apoyo. Define archivos, secuencia, aceptación, límites y condición de parada. El plan debe ser corto porque su función es controlar la ejecución, no llenar la ventana de contexto.
+
+### Si hace falta: delegar / When needed: delegate
+
+En problemas con partes independientes, el agente se convierte en líder. Divide la tarea, asigna un único objetivo a cada especialista, comparte sólo el contexto mínimo y define explícitamente `in_scope` y `out_of_scope`. Los especialistas no se delegan entre sí.
+
+### Finalmente: demostrar / Finally: prove
+
+Ejecuta el cambio más pequeño y reversible, revisa regresiones, corre las comprobaciones proporcionales al riesgo y entrega evidencia. Las acciones externas, destructivas o irreversibles requieren un checkpoint humano.
+
+## Mapas del método / Method maps
+
+Los mapas no son decoración. Funcionan como una guía visual para que una persona entienda la skill antes de leer sus instrucciones completas.
+
+| Mapa | Pregunta que responde | Vista |
 | --- | --- | --- |
-| `skills/universal-agent-workspace/SKILL.md` | Skill única y portable para agentes y LLMs | Implementado |
-| `catalog/skills.json` | Índice interno de 100 capacidades seleccionables | Implementado |
-| `skills/universal-agent-workspace/references/maps/` | Mapas conceptuales de selección, ejecución, UI y errores | Implementado |
-| `skills/universal-agent-workspace/references/images/` | Imagen práctica para explicar el método | Implementado |
-| `src/registry.ts` | Adaptador opcional para descubrir y validar skills | Implementado |
-| `src/server.ts` | Adaptador opcional de catálogo y consultas | Implementado |
-| `.github/workflows/quality.yml` | Validación automática del repositorio | Implementado |
+| ![Bucle de control](library/assets/map-control-loop.png) | ¿Cómo pasa una petición de contexto a evidencia? | [Abrir mapa](skills/universal-agent-workspace/references/maps/01-control-loop.mmd) |
+| ![Selección de capacidades](library/assets/map-skill-selection.png) | ¿Cómo decide qué capacidad activar? | [Abrir mapa](skills/universal-agent-workspace/references/maps/02-skill-selection.mmd) |
+| ![UI atómica](library/assets/map-ui-atomic.png) | ¿Cómo estructura una interfaz desde tokens hasta layout? | [Abrir mapa](skills/universal-agent-workspace/references/maps/03-ui-atomic.mmd) |
+| ![Pausa ante error](library/assets/map-pause-on-error.png) | ¿Cuándo debe detenerse en lugar de improvisar? | [Abrir mapa](skills/universal-agent-workspace/references/maps/04-pause-on-error.mmd) |
 
-La estructura sigue la especificación Agent Skills: cada skill tiene un directorio con `SKILL.md`, frontmatter YAML con `name` y `description`, y recursos opcionales separados para carga progresiva [1]. Vercel Skills ya demuestra un patrón de instalación a múltiples agentes, con symlink/copia, fuentes Git y detección de hosts [2]. gstack aporta el modelo de flujo completo `think → plan → build → review → test → ship → reflect`, además de QA, seguridad, navegador, documentación, benchmarking y coordinación multiagente [3].
+## La skill principal / The main skill
 
-## Instalación local
-
-```bash
-git clone <tu-repositorio> universal-agent-skills
-cd universal-agent-skills
-node --version                    # Node 22+
-chmod +x bin/uaskills.mjs
-npm run validate
-node bin/uaskills.mjs list
-```
-
-El proyecto no incluye credenciales. Configura sólo en el proceso del gateway:
-
-```bash
-export OPENAI_API_KEY="..."
-export OPENAI_MODEL="gpt-4.1-mini"
-export ANTHROPIC_API_KEY="..."
-export ANTHROPIC_MODEL="claude-sonnet-4-20250514"
-export GOOGLE_API_KEY="..."
-export OPENROUTER_API_KEY="..."
-export OPENROUTER_MODEL="openai/gpt-4.1-mini"
-export LOCAL_LLM_BASE_URL="http://127.0.0.1:11434/v1"
-export LOCAL_LLM_MODEL="llama3.2"
-export GATEWAY_TOKEN="cambia-este-token-en-produccion"
-```
-
-Inicia el gateway:
-
-```bash
-npm start
-curl http://127.0.0.1:8787/health
-node bin/uaskills.mjs models
-node bin/uaskills.mjs run universal-workspace "Diseña el plan de revisión de una API multi-tenant."
-```
-
-Para añadir skills locales, define `SKILL_ROOTS` con rutas separadas por comas. El runtime valida nombre, descripción y coincidencia con el directorio, y omite skills inválidas en lugar de ejecutarlas silenciosamente.
-
-```bash
-export SKILL_ROOTS="$PWD/skills,$HOME/.agents/skills,$HOME/.claude/skills"
-```
-
-## Integración con agentes
-
-La skill portable se instala mediante la CLI de Vercel Skills o copiando el directorio `skills/universal-workspace` al directorio que el agente soporte. La configuración MCP genérica se obtiene con:
-
-```bash
-node bin/uaskills.mjs mcp-config
-```
-
-El endpoint MCP es:
+La entrega importante está aquí:
 
 ```text
-http://127.0.0.1:8787/mcp
+skills/universal-agent-workspace/SKILL.md
 ```
 
-El gateway expone `skills_list`, `models_list` y `chat`. Para agentes que sólo soportan prompts, utiliza la misma `SKILL.md` y llama a la API HTTP. Para agentes que soportan herramientas, MCP ofrece descubrimiento estructurado y un único punto de entrada. Esta doble superficie evita depender de un formato privado de Claude.
-
-## API de streaming
-
-```bash
-curl -N http://127.0.0.1:8787/v1/chat/completions \
-  -H "Authorization: Bearer $GATEWAY_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "skill": "universal-workspace",
-    "provider": "openrouter",
-    "model": "openai/gpt-4.1-mini",
-    "messages": [{"role":"user","content":"Revisa este diseño y devuelve riesgos."}],
-    "stream": true
-  }'
-```
-
-La capa usa el formato de chat completions OpenAI-compatible para los proveedores configurados. Anthropic, Google, OpenRouter y servidores locales que expongan ese contrato pueden conectarse mediante `*_BASE_URL`, `*_API_KEY` y `*_MODEL`. En producción, añade un adaptador específico cuando un proveedor no implemente exactamente ese contrato; no fuerces transformaciones ambiguas dentro de una skill.
-
-## Arquitectura de producción
+La carpeta contiene una sola skill autónoma y sus referencias progresivas. El archivo principal permanece por debajo de 500 líneas para que pueda cargarse sin convertir el contexto en basura. Los detalles específicos viven en `references/` y sólo se abren cuando la tarea los necesita.
 
 ```text
-Agent / IDE / CLI / MCP client
-              |
-       TLS + auth + rate limit
-              |
-      Universal Skills Gateway
-       |        |        |
-   Registry  Policy   Model Router
-       |        |        |
-  SKILL.md  audit   OpenAI / Anthropic / Google / OpenRouter / Local
-              |
-        SSE stream + receipts
+skills/universal-agent-workspace/
+├── SKILL.md
+└── references/
+    ├── efficiency-engines.md
+    ├── engineering-standards.md
+    ├── luxury-digital-design-system.md
+    ├── creative-documentation-system.md
+    ├── skills-benchmark.md
+    ├── maps/
+    └── images/
 ```
 
-El gateway de esta entrega es un proceso Node.js con SSE y fallback secuencial. Para una instalación 24/7, ejecútalo detrás de TLS, un proxy con límites de tamaño y tasa, un almacén de auditoría append-only y un gestor de secretos. No expongas directamente el puerto sin autenticación.
+## Qué contiene / What it contains
 
-## Catálogo de 100 skills
+| Área | Resultado |
+| --- | --- |
+| Producto y estrategia | Reformulación del problema, PRD, especificaciones y revisión de alcance. |
+| Arquitectura | Dominio, datos, APIs, estados, seguridad y decisiones reversibles. |
+| Ingeniería | Implementación tipada, separación de responsabilidades y estándares de producción. |
+| UI y diseño | Sistema bilingüe de tokens, átomos, moléculas, organismos y layouts. |
+| Creative technology | Reglas para Three.js, Canvas, shaders, WebGL, WebGPU y Remotion sin animación inútil. |
+| QA y seguridad | Investigación de causa raíz, revisión, pruebas proporcionales, checkpoints y límites. |
+| Multiagente | Topología, aislamiento de contexto, roles únicos y ensamblaje controlado. |
+| Documentación | Salidas legibles para humanos y contratos compactos para agentes. |
 
-El catálogo combina capacidades de gstack, fuentes visibles en skills.sh, Anthropic Skills, Vercel Agent Skills, Prisma, Supabase, Microsoft Azure, Matt Pocock, Firebase, Remotion, RunComfy y otras fuentes públicas. La clasificación se hizo por **utilidad operativa**, **madurez o adopción observable**, **cobertura de ciclo de vida** y **riesgo de ejecución**. Las entradas son candidatas referenciales: deben fijarse a commit, pasar revisión de licencia, escaneo de prompt injection y sandbox de scripts antes de permitir ejecución externa automática.
+## Uso real / Real use
 
-El archivo `catalog/skills.json` contiene el origen, repositorio, categoría, resumen, base de selección y estado. No se copian los contenidos de las 100 skills en este repositorio base; eso evita cambiar upstream, reduce duplicación y permite actualizar por lockfile o mirror verificado.
-
-## Seguridad y límites
-
-La solución separa la selección de una skill de su ejecución. Por defecto, el catálogo no ejecuta código remoto. Las acciones destructivas, publicación, pago, escritura externa, uso de cookies o modificación de producción requieren una política y confirmación humana. Añade en producción una allowlist de hosts, un sandbox de procesos, límites de CPU/memoria/tiempo, egress receipts con hash encadenado y logs sin secretos.
-
-### Alternativas de ejecución persistente
-
-| Enfoque | Tradeoffs | Coste | Complejidad de instalación |
-| --- | --- | --- | --- |
-| Ejecutarlo localmente en la máquina del equipo | Máximo control y privacidad; debe permanecer encendida y requiere operar actualizaciones | Sin coste de infraestructura adicional | Baja |
-| Desplegarlo en un servicio gestionado con proceso persistente | HTTPS, reinicio y operación simplificados; límites de CPU/memoria y coste de instancia reservada | Uso mensual según proveedor y modalidad | Media |
-| Desplegarlo en una VM/cloud con Docker y Redis/cola | Control total, workers, observabilidad y escalado; exige hardening, backups y mantenimiento | Coste de VM, almacenamiento, tráfico y servicios auxiliares | Alta |
-
-Para una prueba real, empieza localmente. Para un equipo que necesite acceso continuo y streaming, elige un servicio gestionado persistente si sus límites son suficientes. Usa una VM sólo si necesitas Docker, runtime del sistema, IP fija o recursos que el servicio gestionado no ofrece.
-
-## Preservación de upstream
-
-Los repositorios auditados se mantienen fuera del código modificado. Si quieres fijarlos como submódulos readonly:
+Copia la carpeta de la skill al directorio de skills que soporte tu agente. No necesitas instalar Node.js, Python, MCP, una API ni un gateway para utilizarla.
 
 ```bash
-git submodule add https://github.com/garrytan/gstack.git upstream/gstack
-git submodule add https://github.com/vercel-labs/skills.git upstream/vercel-skills
-git submodule update --init --recursive
+git clone https://github.com/christiandejesus320-droid/universal-agent-skills-gateway.git
+cp -R universal-agent-skills-gateway/skills/universal-agent-workspace \
+  ~/.agents/skills/universal-agent-workspace
 ```
 
-El gateway sólo consume sus artefactos, genera adaptadores y conserva la versión fijada. Nunca ejecutes `setup` de gstack contra una ruta que contenga archivos de usuario sin inspeccionar primero sus efectos.
+Después escribe una petición normal. La skill se activa cuando la tarea requiere planificación, investigación dirigida, ejecución sobre archivos, revisión, pruebas, diseño de interfaz, documentación, coordinación multiagente o control estricto del contexto.
 
-## Próximas mejoras recomendadas
+```text
+Revisa esta API multi-tenant. Primero identifica el problema y el alcance,
+propón un plan corto, modifica sólo los archivos necesarios y demuestra las pruebas.
+```
 
-La siguiente iteración debe añadir un lockfile de skills con commit y hash SHA-256, un escáner de frontmatter y scripts, un sandbox por skill, Redis o una cola durable para ejecuciones largas, OpenTelemetry, cuotas por tenant, almacenamiento de sesiones y adaptadores nativos de Anthropic/Google. También conviene verificar automáticamente cada entrada del catálogo contra su repositorio actual y reemplazar cualquier skill retirada, renombrada o con licencia incompatible.
+## Design system / Sistema de diseño
 
-## Referencias
+Para tareas de interfaz, la skill usa esta secuencia:
+
+```text
+TOKENS → ATOMS → MOLECULES → ORGANISMS → LAYOUT
+```
+
+El lenguaje visual parte de una base OLED, contraste alto, tipografía editorial, aire deliberado, bordes contenidos y motion con propósito. Cada interacción debe definir idle, hover, focus, active, loading, disabled, success y error. Para branding, dashboards premium, interfaces de agentes o sistemas visuales de alto nivel, la skill abre `luxury-digital-design-system.md` bajo demanda.
+
+For interface work, the skill uses the same atomic sequence and loads the design reference only when the task requires it. The visual system favors OLED depth, high contrast, editorial hierarchy, restrained borders, purposeful motion and accessible states.
+
+## Qué no es / What it is not
+
+No es una gateway de modelos. No enruta peticiones entre proveedores. No exige un servidor persistente. No ejecuta automáticamente código remoto. No reemplaza los permisos del sistema operativo, un sandbox, una política de seguridad ni la confirmación humana.
+
+El catálogo y la biblioteca visual son herramientas opcionales de apoyo. La skill sigue funcionando copiando únicamente `SKILL.md` y sus referencias necesarias.
+
+## Validación / Validation
+
+```bash
+npm run build
+npm run validate:library
+npm test
+python /home/ubuntu/skills/skill-creator/scripts/quick_validate.py \
+  skills/universal-agent-workspace
+```
+
+La calidad se verifica en cinco dimensiones: descubribilidad, adherencia a instrucciones, economía de contexto, seguridad y evidencia de resultado.
+
+## Licencia / License
+
+MIT. Las referencias externas se mantienen como fuentes de patrones y deben revisarse por licencia, versión, seguridad y compatibilidad antes de reutilizar código o instrucciones.
+
+## Referencias / References
 
 [1]: https://agentskills.io/specification "Agent Skills Specification"
-
-[2]: https://github.com/vercel-labs/skills "Vercel Skills CLI"
-
-[3]: https://github.com/garrytan/gstack "gstack — software factory for Claude Code and other agents"
-
-[4]: https://www.skills.sh/ "The Agent Skills Directory"
-
-## Skill única portable / Portable single skill
-
-La entrega principal para cualquier modelo es `skills/universal-agent-workspace/SKILL.md`. El paquete independiente `/home/ubuntu/universal-agent-workspace/` contiene únicamente ese archivo. Puede copiarse como una carpeta de skill en cualquier agente que soporte el formato Agent Skills; no necesita instalar Node.js, Python, Webpack, Pylint, MCP, un gateway ni una API.
-
-The primary deliverable for any model is `skills/universal-agent-workspace/SKILL.md`. The standalone package contains only that file and can be copied into any Agent Skills-compatible agent. It is an instruction layer, not a server or provider integration. The optional catalog UI and server remain separate support tooling and are not required to use the skill.
+[2]: https://github.com/garrytan/gstack "gstack"
+[3]: https://github.com/vercel-labs/skills "Vercel Skills"
+[4]: https://github.com/addyosmani/agent-skills "addyosmani/agent-skills"
+[5]: https://agents.md/ "AGENTS.md"
+[6]: https://github.com/google/skills "Google Agent Skills"
+[7]: https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering "Agent Skills for Context Engineering"
