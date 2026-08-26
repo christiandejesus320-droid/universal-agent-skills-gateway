@@ -1,20 +1,20 @@
 # Universal Design & UI Skill Library
 
-**Universal Design & UI Skill Library** es una biblioteca neutral, bilingüe y catalogada que conserva gstack y Vercel Skills como fuentes upstream y añade un contrato portable para que humanos y modelos entiendan qué problema resuelve cada skill, cuándo usarla y cómo validarla. Incluye una interfaz visual de catálogo, Tokens → Atoms → Molecules → Organisms, ejemplos prácticos, motion, 3D/canvas, Remotion y schemas MCP de solo lectura. El servidor existente es únicamente un adaptador opcional para servir el catálogo y exponer consultas dinámicas; la biblioteca Markdown/JSON sigue siendo la fuente de verdad.
+Estoy construyendo un framework de ejecución para agentes y LLMs que evita que la IA empiece a escribir código o actuar a ciegas en cuanto recibe una orden. El flujo obliga al modelo a entender el objetivo, analizar el contexto disponible, investigar sólo lo que hace falta, proponer un plan corto con límites claros y ejecutar la solución sin sobreingeniería ni consumo fantasma de contexto.
 
-> La solución separa tres responsabilidades: **biblioteca declarativa**, **catálogo visual legible** y **adaptadores opcionales**. Así, cambiar de Claude a Codex, Gemini, Cursor, un agente MCP o un modelo local no obliga a cambiar el contenido de las skills.
+Mi objetivo es llevar este método a un nivel donde cualquier modelo pueda trabajar como un verdadero copiloto técnico: preciso antes de ser autónomo, capaz de explicar qué está haciendo, limitado por el alcance real de la tarea y obligado a validar el resultado antes de terminar. La skill principal es portable y no necesita una gateway, un proveedor específico, un servidor ni una API para funcionar.
 
-## Qué incluye esta primera implementación
+## Qué incluye el proyecto
 
 | Componente | Función | Estado |
 | --- | --- | --- |
-| `skills/universal-workspace/SKILL.md` | Skill canónica portable y orquestadora | Implementado |
-| `catalog/skills.json` | Catálogo normalizado de 100 skills candidatas | Implementado |
-| `src/registry.ts` | Descubrimiento y validación de `SKILL.md` | Implementado |
-| `src/provider.ts` | Enrutamiento, prioridad, fallback y streaming SSE | Implementado |
-| `src/server.ts` | Adaptador opcional: UI estática, tokens, catálogo, preview, SSE y MCP | Implementado |
-| `bin/uaskills.mjs` | CLI de catálogo, validación, ejecución y configuración MCP | Implementado |
-| `upstream/` | Punto reservado para submódulos readonly de gstack y Vercel Skills | No vendorizado por defecto |
+| `skills/universal-agent-workspace/SKILL.md` | Skill única y portable para agentes y LLMs | Implementado |
+| `catalog/skills.json` | Índice interno de 100 capacidades seleccionables | Implementado |
+| `skills/universal-agent-workspace/references/maps/` | Mapas conceptuales de selección, ejecución, UI y errores | Implementado |
+| `skills/universal-agent-workspace/references/images/` | Imagen práctica para explicar el método | Implementado |
+| `src/registry.ts` | Adaptador opcional para descubrir y validar skills | Implementado |
+| `src/server.ts` | Adaptador opcional de catálogo y consultas | Implementado |
+| `.github/workflows/quality.yml` | Validación automática del repositorio | Implementado |
 
 La estructura sigue la especificación Agent Skills: cada skill tiene un directorio con `SKILL.md`, frontmatter YAML con `name` y `description`, y recursos opcionales separados para carga progresiva [1]. Vercel Skills ya demuestra un patrón de instalación a múltiples agentes, con symlink/copia, fuentes Git y detección de hosts [2]. gstack aporta el modelo de flujo completo `think → plan → build → review → test → ship → reflect`, además de QA, seguridad, navegador, documentación, benchmarking y coordinación multiagente [3].
 
