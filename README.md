@@ -1,8 +1,8 @@
-# Universal Agent Skills Gateway
+# Universal Design & UI Skill Library
 
-**Universal Agent Skills Gateway** es una capa neutral que conserva gstack y Vercel Skills como fuentes upstream y añade un runtime propio para descubrir skills, cargarlas progresivamente y ejecutarlas a través de un gateway multi-modelo con streaming SSE. El objetivo no es reescribir ni alterar los repositorios originales, sino envolverlos con un contrato portable para cualquier agente que soporte el estándar Agent Skills.
+**Universal Design & UI Skill Library** es una biblioteca neutral, bilingüe y catalogada que conserva gstack y Vercel Skills como fuentes upstream y añade un contrato portable para que humanos y modelos entiendan qué problema resuelve cada skill, cuándo usarla y cómo validarla. Incluye una interfaz visual de catálogo, Tokens → Atoms → Molecules → Organisms, ejemplos prácticos, motion, 3D/canvas, Remotion y schemas MCP de solo lectura. El servidor existente es únicamente un adaptador opcional para servir el catálogo y exponer consultas dinámicas; la biblioteca Markdown/JSON sigue siendo la fuente de verdad.
 
-> La solución separa tres responsabilidades: **skills declarativas**, **runtime de ejecución** y **gateway de modelos**. Así, cambiar de Claude a Codex, Gemini, OpenRouter, un proveedor OpenAI-compatible o un modelo local no obliga a cambiar el contenido de las skills.
+> La solución separa tres responsabilidades: **biblioteca declarativa**, **catálogo visual legible** y **adaptadores opcionales**. Así, cambiar de Claude a Codex, Gemini, Cursor, un agente MCP o un modelo local no obliga a cambiar el contenido de las skills.
 
 ## Qué incluye esta primera implementación
 
@@ -12,7 +12,7 @@
 | `catalog/skills.json` | Catálogo normalizado de 100 skills candidatas | Implementado |
 | `src/registry.ts` | Descubrimiento y validación de `SKILL.md` | Implementado |
 | `src/provider.ts` | Enrutamiento, prioridad, fallback y streaming SSE | Implementado |
-| `src/server.ts` | API HTTP, `/v1/chat/completions`, `/v1/models`, `/v1/skills` y `/mcp` | Implementado |
+| `src/server.ts` | Adaptador opcional: UI estática, tokens, catálogo, preview, SSE y MCP | Implementado |
 | `bin/uaskills.mjs` | CLI de catálogo, validación, ejecución y configuración MCP | Implementado |
 | `upstream/` | Punto reservado para submódulos readonly de gstack y Vercel Skills | No vendorizado por defecto |
 

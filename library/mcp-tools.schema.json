@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/universal-design-ui-library/mcp-tools.schema.json",
+  "title": "Universal Design UI Library MCP Tools",
+  "description": "Optional read-only MCP tools for discovering and previewing a bilingual design catalog.",
+  "tools": {
+    "get_design_tokens": {
+      "name": "get_design_tokens",
+      "description": "Returns JSON for OLED and high-contrast colors, spacing, radii, motion curves, elevation and typography.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {"theme": {"type": "string", "enum": ["oled", "highContrast", "all"], "default": "all"}},
+        "additionalProperties": false
+      },
+      "outputSchema": {"type": "object", "required": ["colors", "spacing", "motion"]}
+    },
+    "render_component": {
+      "name": "render_component",
+      "description": "Returns a safe, declarative render specification for one catalog component. It never executes arbitrary code.",
+      "inputSchema": {
+        "type": "object",
+        "required": ["component_id", "props"],
+        "properties": {
+          "component_id": {"type": "string", "minLength": 1, "examples": ["atom.button", "molecule.command-palette", "organism.app-shell"]},
+          "props": {"type": "object", "additionalProperties": true},
+          "language": {"type": "string", "enum": ["en", "es"], "default": "en"}
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {"type": "object", "required": ["component_id", "level", "props", "safe"]}
+    },
+    "search_ui_catalog": {
+      "name": "search_ui_catalog",
+      "description": "Searches the catalog by intent, problem, purpose, tag, atomic level, or bilingual copy.",
+      "inputSchema": {
+        "type": "object",
+        "required": ["query"],
+        "properties": {
+          "query": {"type": "string", "minLength": 1},
+          "level": {"type": "string", "enum": ["token", "atom", "molecule", "organism", "layout"]},
+          "tags": {"type": "array", "items": {"type": "string"}, "maxItems": 12},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 50, "default": 20}
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {"type": "array", "items": {"type": "object", "required": ["id", "level", "name", "problem", "purpose"]}}
+    }
+  }
+}
