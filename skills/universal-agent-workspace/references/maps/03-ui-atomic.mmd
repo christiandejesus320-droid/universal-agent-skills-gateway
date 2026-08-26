@@ -1,17 +1,19 @@
-flowchart TD
-  A[User problem / Problema de usuario] --> B[Tokens / Tokens]
-  B --> C[Atoms / Átomos]
-  C --> D[Molecules / Moléculas]
-  D --> E[Organisms / Organismos]
-  E --> F[Layout / Layout]
-  F --> G[States / Estados]
-  G --> H[Accessibility + responsive / Accesibilidad + responsive]
-  H --> I[Evidence / Evidencia]
-  G -->|Missing state / Falta estado| C
-  H -->|Fails / Falla| B
+%%{init: {"theme":"dark", "themeVariables":{"background":"#09090B","primaryColor":"#111113","primaryTextColor":"#FAFAFA","primaryBorderColor":"#52525B","lineColor":"#71717A","secondaryColor":"#18181B","tertiaryColor":"#27272A","fontFamily":"Inter, Arial"}}}%%
+flowchart LR
+  A[Qué necesita la persona] --> B[Defino la jerarquía]
+  B --> C[Tokens: color,<br/>espacio y tipo]
+  C --> D[Átomos: acciones<br/>y datos básicos]
+  D --> E[Moléculas: relaciones<br/>que se entienden juntas]
+  E --> F[Organismos: una tarea<br/>completa]
+  F --> G[Layout: aire, ritmo<br/>y responsive]
+  G --> H[Estados: espera,<br/>éxito, error y salida]
+  H --> I[Pruebo teclado,<br/>contraste y móvil]
+  I --> J[Entrego una interfaz<br/>que explica su resultado]
+  H -->|Falta un estado| D
+  I -->|No se entiende| B
 
-  classDef level fill:#11161d,stroke:#72a7ff,color:#f5f7fa
-  classDef quality fill:#16291f,stroke:#3ddc97,color:#f5f7fa
-  classDef loop fill:#2b2020,stroke:#ff6b7a,color:#f5f7fa
-  class A,B,C,D,E,F,G level
-  class H,I quality
+  classDef base fill:#111113,stroke:#71717A,color:#FAFAFA,stroke-width:1px
+  classDef quality fill:#111113,stroke:#86A98A,color:#FAFAFA,stroke-width:1px
+  classDef repair fill:#18181B,stroke:#C7A56B,color:#FAFAFA,stroke-width:1px
+  class A,B,C,D,E,F,G,H base
+  class I,J quality

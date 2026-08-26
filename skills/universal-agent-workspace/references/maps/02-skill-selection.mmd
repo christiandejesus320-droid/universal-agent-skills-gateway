@@ -1,18 +1,18 @@
+%%{init: {"theme":"dark", "themeVariables":{"background":"#09090B","primaryColor":"#111113","primaryTextColor":"#FAFAFA","primaryBorderColor":"#52525B","lineColor":"#71717A","secondaryColor":"#18181B","tertiaryColor":"#27272A","fontFamily":"Inter, Arial"}}}%%
 flowchart LR
-  A[Problem / Problema] --> B[Intent / Intención]
-  B --> C[Capability candidates / Candidatas]
-  C --> D[Rank by fit / Ordenar por ajuste]
-  D --> E[Check maturity + source / Revisar madurez + fuente]
-  E --> F[Check risk + permissions / Revisar riesgo + permisos]
-  F --> G[Select minimum set / Seleccionar conjunto mínimo]
-  G --> H[Load one skill slice / Cargar un segmento]
-  H --> I[Return reason + next action / Devolver razón + siguiente acción]
-  F -->|High risk / Alto riesgo| J[Human confirmation / Confirmación humana]
-  J --> G
+  A[Qué problema tengo] --> B[Qué quiero conseguir]
+  B --> C[Qué parte del trabajo<br/>necesita ayuda]
+  C --> D[Comparo ajuste,<br/>fuente y madurez]
+  D --> E[Reviso riesgo,<br/>permisos y límites]
+  E --> F[Elijo la combinación<br/>más pequeña que resuelve]
+  F --> G[Abro sólo ese fragmento<br/>de conocimiento]
+  G --> H[Explico por qué lo elegí<br/>y cuál es el siguiente paso]
+  E -->|Acción sensible| I[La decisión vuelve<br/>a la persona]
+  I --> F
 
-  classDef main fill:#11161d,stroke:#72a7ff,color:#f5f7fa
-  classDef gate fill:#16291f,stroke:#3ddc97,color:#f5f7fa
-  classDef human fill:#2b2020,stroke:#f6c85f,color:#f5f7fa
-  class A,B,C,D,E,F,H,I main
-  class G gate
-  class J human
+  classDef main fill:#111113,stroke:#71717A,color:#FAFAFA,stroke-width:1px
+  classDef chosen fill:#18181B,stroke:#8B9CFF,color:#FAFAFA,stroke-width:1px
+  classDef human fill:#18181B,stroke:#C7A56B,color:#FAFAFA,stroke-width:1px
+  class A,B,C,D,E,G,H main
+  class F chosen
+  class I human

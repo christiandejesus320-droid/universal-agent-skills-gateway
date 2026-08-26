@@ -1,21 +1,24 @@
-flowchart TD
-  A[User request / Petición del usuario] --> B[Context audit / Auditoría de contexto]
-  B --> C[Planner: strict JSON / Planificador: JSON estricto]
-  C -->|goal, steps, exact queries, out_of_scope| D{Blocker exists? / ¿Existe bloqueo?}
-  D -->|No| F[Executor / Ejecutor]
-  D -->|Yes| E[Targeted research only / Investigación dirigida]
-  E --> G[Context truncation / Truncación de contexto]
+%%{init: {"theme":"dark", "themeVariables":{"background":"#09090B","primaryColor":"#111113","primaryTextColor":"#FAFAFA","primaryBorderColor":"#52525B","lineColor":"#71717A","secondaryColor":"#18181B","tertiaryColor":"#27272A","fontFamily":"Inter, Arial"}}}%%
+flowchart LR
+  A[Me llega una petición real] --> B[Primero entiendo qué se quiere lograr]
+  B --> C[Marco lo que sí voy a tocar<br/>y lo que queda fuera]
+  C --> D{¿Hay algo que<br/>bloquea el avance?}
+  D -->|No| F[Hago el cambio necesario]
+  D -->|Sí| E[Busco sólo la respuesta<br/>que falta]
+  E --> G[Cargo únicamente<br/>el contexto útil]
   G --> F
-  F --> H[Validate / Validar]
-  H -->|Pass / Pasa| I[Deliver evidence / Entregar evidencia]
-  H -->|Error / Error| J[Capture exact stderr / Capturar stderr exacto]
-  J --> K[Micro-fix call / Micro-llamada de corrección]
+  F --> H[Compruebo que el resultado<br/>hace lo que debe]
+  H -->|Funciona| I[Dejo evidencia clara]
+  H -->|Falla| J[Guardo el error exacto<br/>y paro la improvisación]
+  J --> K[Corrijo sólo el punto<br/>que causó el fallo]
   K --> F
-  I --> L[Stop when actionable / Detener cuando sea accionable]
+  I --> L[Cierro cuando el trabajo<br/>ya es accionable]
 
-  classDef core fill:#11161d,stroke:#72a7ff,color:#f5f7fa
-  classDef gate fill:#16291f,stroke:#3ddc97,color:#f5f7fa
-  classDef warn fill:#2b2020,stroke:#ff6b7a,color:#f5f7fa
-  class C,F core
-  class D,H,I,L gate
-  class J,K warn
+  classDef core fill:#111113,stroke:#71717A,color:#FAFAFA,stroke-width:1px
+  classDef decision fill:#18181B,stroke:#8B9CFF,color:#FAFAFA,stroke-width:1px
+  classDef proof fill:#111113,stroke:#86A98A,color:#FAFAFA,stroke-width:1px
+  classDef pause fill:#18181B,stroke:#C7A56B,color:#FAFAFA,stroke-width:1px
+  class A,B,C,F,G,H core
+  class D decision
+  class I,L proof
+  class E,J,K pause

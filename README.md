@@ -4,7 +4,7 @@
 >
 > **One skill. Every model. Real work.**
 
-![Universal Agent Workspace — entrada visual](library/assets/entry-preview-desktop.png)
+<p align="center"><img src="library/assets/universal-skill-token-control-laptop-only.png" width="720" alt="Universal Agent Workspace — una laptop mostrando el método de trabajo y el control de contexto"></p>
 
 Estoy construyendo una skill portable para resolver un problema concreto: que la IA no empiece a escribir código ni a ejecutar acciones a ciegas en cuanto recibe una orden.
 
@@ -16,9 +16,9 @@ The skill makes the agent **understand the objective, inspect available context,
 
 ## La idea en una imagen / The idea in one image
 
-![Laptop con la interfaz de control de contexto](library/assets/universal-skill-token-control-laptop-only.png)
+La imagen no intenta vender una inteligencia artificial. Muestra el tipo de herramienta que quiero construir: una superficie de trabajo sobria, donde la intención se convierte en una secuencia clara y el contexto se mantiene bajo control.
 
-La interfaz visual representa el comportamiento que quiero conseguir: menos ruido, menos contexto desperdiciado y más evidencia. La skill no intenta cargar todo el conocimiento al principio. Primero muestra la ruta; después abre únicamente el recurso que hace falta.
+Quiero que la interfaz parezca una herramienta que un ingeniero, un diseñador o un fundador pueda abrir todos los días. **La tecnología debe sentirse por el comportamiento, no por los efectos.** La skill no carga todo el conocimiento al principio. Primero muestra la ruta; después abre únicamente el recurso que hace falta.
 
 > **THINK → PLAN → BUILD → REVIEW → TEST → SHIP → REFLECT**
 
@@ -55,12 +55,18 @@ Ejecuta el cambio más pequeño y reversible, revisa regresiones, corre las comp
 
 Los mapas no son decoración. Funcionan como una guía visual para que una persona entienda la skill antes de leer sus instrucciones completas.
 
-| Mapa | Pregunta que responde | Vista |
+<p align="center">
+  <img src="library/assets/map-control-loop.png" width="720" alt="Mapa del bucle de control">
+</p>
+
+| Mapa | Lo que explica | Fuente editable |
 | --- | --- | --- |
-| ![Bucle de control](library/assets/map-control-loop.png) | ¿Cómo pasa una petición de contexto a evidencia? | [Abrir mapa](skills/universal-agent-workspace/references/maps/01-control-loop.mmd) |
-| ![Selección de capacidades](library/assets/map-skill-selection.png) | ¿Cómo decide qué capacidad activar? | [Abrir mapa](skills/universal-agent-workspace/references/maps/02-skill-selection.mmd) |
-| ![UI atómica](library/assets/map-ui-atomic.png) | ¿Cómo estructura una interfaz desde tokens hasta layout? | [Abrir mapa](skills/universal-agent-workspace/references/maps/03-ui-atomic.mmd) |
-| ![Pausa ante error](library/assets/map-pause-on-error.png) | ¿Cuándo debe detenerse en lugar de improvisar? | [Abrir mapa](skills/universal-agent-workspace/references/maps/04-pause-on-error.mmd) |
+| **Bucle de control** | Cómo paso de una petición real a una respuesta con evidencia. | [Ver mapa](skills/universal-agent-workspace/references/maps/01-control-loop.mmd) |
+| **Selección de capacidades** | Cómo elijo la ayuda mínima según el problema. | [Ver mapa](skills/universal-agent-workspace/references/maps/02-skill-selection.mmd) |
+| **UI atómica** | Cómo construyo una interfaz desde la necesidad de la persona. | [Ver mapa](skills/universal-agent-workspace/references/maps/03-ui-atomic.mmd) |
+| **Pausa ante error** | Cómo paro, aíslo y corrijo sin improvisar. | [Ver mapa](skills/universal-agent-workspace/references/maps/04-pause-on-error.mmd) |
+
+Las otras tres versiones están disponibles en la carpeta de mapas y se muestran como referencias visuales dentro de la biblioteca opcional. No quiero que el README se convierta en una pared de imágenes: una idea dominante por sección, texto útil y espacio para respirar.
 
 ## La skill principal / The main skill
 
