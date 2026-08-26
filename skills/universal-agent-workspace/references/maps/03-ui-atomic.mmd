@@ -1,0 +1,17 @@
+flowchart TD
+  A[User problem / Problema de usuario] --> B[Tokens / Tokens]
+  B --> C[Atoms / Átomos]
+  C --> D[Molecules / Moléculas]
+  D --> E[Organisms / Organismos]
+  E --> F[Layout / Layout]
+  F --> G[States / Estados]
+  G --> H[Accessibility + responsive / Accesibilidad + responsive]
+  H --> I[Evidence / Evidencia]
+  G -->|Missing state / Falta estado| C
+  H -->|Fails / Falla| B
+
+  classDef level fill:#11161d,stroke:#72a7ff,color:#f5f7fa
+  classDef quality fill:#16291f,stroke:#3ddc97,color:#f5f7fa
+  classDef loop fill:#2b2020,stroke:#ff6b7a,color:#f5f7fa
+  class A,B,C,D,E,F,G level
+  class H,I quality

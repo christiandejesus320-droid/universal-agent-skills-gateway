@@ -1,0 +1,15 @@
+flowchart TD
+  A[Execute / Ejecutar] --> B{Pass? / ¿Pasa?}
+  B -->|Yes / Sí| C[Record evidence / Registrar evidencia]
+  B -->|No / No| D[Capture exact error / Capturar error exacto]
+  D --> E[Isolate file, function, input / Aislar archivo, función, entrada]
+  E --> F[Targeted investigation / Investigación dirigida]
+  F --> G[Micro-fix only / Sólo micro-corrección]
+  G --> A
+  C --> H[Stop / Detener]
+
+  classDef action fill:#11161d,stroke:#72a7ff,color:#f5f7fa
+  classDef success fill:#16291f,stroke:#3ddc97,color:#f5f7fa
+  classDef error fill:#2b2020,stroke:#ff6b7a,color:#f5f7fa
+  class A,D,E,F,G action
+  class B,C,H success

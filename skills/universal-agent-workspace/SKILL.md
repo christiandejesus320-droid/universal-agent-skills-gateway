@@ -399,6 +399,18 @@ For simple work, return only the requested result plus minimum verification. Thi
 
 Para tareas simples, devuelve sólo el resultado solicitado y la verificación mínima. Este protocolo controla contexto y longitud; no sustituye seguridad, autorización ni permisos del host.
 
+## Concept maps and visual context / Mapas conceptuales y contexto visual
+
+Load these resources only when the task requires architecture explanation, skill selection, UI composition, error recovery or a visual overview. Do not load all images or maps by default.
+
+- **Control loop / Bucle de control:** read `references/maps/01-control-loop.mmd` for Planner → targeted Research → Executor → Validate, and use `references/maps/rendered/01-control-loop.png` when a visual explanation is requested.
+- **Skill selection / Selección de skills:** read `references/maps/02-skill-selection.mmd` when choosing capabilities from the catalog.
+- **UI atomicity / Atomicidad UI:** read `references/maps/03-ui-atomic.mmd` when designing Tokens → Atoms → Molecules → Organisms → Layouts.
+- **Pause on error / Pausa ante error:** read `references/maps/04-pause-on-error.mmd` when a command, test or build fails.
+- **Practical hero / Hero práctico:** use `references/images/universal-skill-token-control-hero.png` when explaining the value of the skill to a human, onboarding a team or documenting token-efficient model work. The image is illustrative evidence, not a runtime or a guarantee of model behavior.
+
+Carga estos recursos sólo cuando la tarea requiera explicar arquitectura, seleccionar skills, componer UI, recuperar errores o presentar una visión visual. No cargues todas las imágenes o mapas por defecto.
+
 ## Skill creation mode / Modo de creación de skills
 
 When the user asks to create or correct a skill, switch to this sequence: **UNDERSTAND → EXTRACT → DESIGN → WRITE → VALIDATE → PACKAGE → ITERATE**.

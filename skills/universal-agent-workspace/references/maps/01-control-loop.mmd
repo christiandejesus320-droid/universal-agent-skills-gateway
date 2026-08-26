@@ -1,0 +1,21 @@
+flowchart TD
+  A[User request / Petición del usuario] --> B[Context audit / Auditoría de contexto]
+  B --> C[Planner: strict JSON / Planificador: JSON estricto]
+  C -->|goal, steps, exact queries, out_of_scope| D{Blocker exists? / ¿Existe bloqueo?}
+  D -->|No| F[Executor / Ejecutor]
+  D -->|Yes| E[Targeted research only / Investigación dirigida]
+  E --> G[Context truncation / Truncación de contexto]
+  G --> F
+  F --> H[Validate / Validar]
+  H -->|Pass / Pasa| I[Deliver evidence / Entregar evidencia]
+  H -->|Error / Error| J[Capture exact stderr / Capturar stderr exacto]
+  J --> K[Micro-fix call / Micro-llamada de corrección]
+  K --> F
+  I --> L[Stop when actionable / Detener cuando sea accionable]
+
+  classDef core fill:#11161d,stroke:#72a7ff,color:#f5f7fa
+  classDef gate fill:#16291f,stroke:#3ddc97,color:#f5f7fa
+  classDef warn fill:#2b2020,stroke:#ff6b7a,color:#f5f7fa
+  class C,F core
+  class D,H,I,L gate
+  class J,K warn

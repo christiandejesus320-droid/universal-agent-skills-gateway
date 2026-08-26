@@ -1,0 +1,18 @@
+flowchart LR
+  A[Problem / Problema] --> B[Intent / Intención]
+  B --> C[Capability candidates / Candidatas]
+  C --> D[Rank by fit / Ordenar por ajuste]
+  D --> E[Check maturity + source / Revisar madurez + fuente]
+  E --> F[Check risk + permissions / Revisar riesgo + permisos]
+  F --> G[Select minimum set / Seleccionar conjunto mínimo]
+  G --> H[Load one skill slice / Cargar un segmento]
+  H --> I[Return reason + next action / Devolver razón + siguiente acción]
+  F -->|High risk / Alto riesgo| J[Human confirmation / Confirmación humana]
+  J --> G
+
+  classDef main fill:#11161d,stroke:#72a7ff,color:#f5f7fa
+  classDef gate fill:#16291f,stroke:#3ddc97,color:#f5f7fa
+  classDef human fill:#2b2020,stroke:#f6c85f,color:#f5f7fa
+  class A,B,C,D,E,F,H,I main
+  class G gate
+  class J human
