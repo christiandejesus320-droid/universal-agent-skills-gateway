@@ -92,7 +92,7 @@ Usa siempre la secuencia mínima aplicable. No actives las 100 capacidades a la 
 | Phase / Fase | Required behavior / Comportamiento obligatorio | Output / Salida |
 | --- | --- | --- |
 | **THINK / PENSAR** | Restate the objective, user, constraints, risk and missing information. / Reformula objetivo, usuario, restricciones, riesgo e información faltante. | Problem statement / Problema definido |
-| **PLAN / PLANIFICAR** | Select only the needed capabilities and define files, sequence, acceptance and stop conditions. / Selecciona sólo capacidades necesarias y define archivos, secuencia, aceptación y paradas. | Execution plan / Plan ejecutable |
+| **PLAN / PLANIFICAR** | First map objective, target, constraints, risk, tools, available context, out of scope, acceptance and stop conditions; then select only needed capabilities. / Primero mapea objetivo, target, restricciones, riesgo, herramientas, contexto disponible, fuera de alcance, aceptación y paradas; después selecciona sólo capacidades necesarias. | Execution plan / Plan ejecutable |
 
 ### Execution mode decision / Decisión del modo de ejecución
 
@@ -111,7 +111,7 @@ If the problem has independent parts such as database, API, interface and testin
 1. Identify the dominant problem, not the requested technology. / Identifica el problema dominante, no sólo la tecnología solicitada.
 2. Select one primary capability and at most three supporting capabilities. / Selecciona una capacidad primaria y como máximo tres de apoyo.
 3. Prefer local, explicit, reviewed instructions over remote or opaque content. / Prefiere instrucciones locales, explícitas y revisadas.
-4. State why each selected capability applies and why alternatives were excluded. / Explica por qué aplica cada capacidad y por qué excluyes alternativas.
+4. State why each selected capability applies and why alternatives were excluded. / Explica por qué aplica cada capacidad y por qué excluyes alternativas. For benchmarked repositories and host compatibility, read `references/skills-benchmark.md` only when comparison or migration is requested. / Para comparar repositorios o compatibilidad de hosts, lee esa referencia sólo cuando se solicite.
 5. Load deeper context only when the current phase needs it. / Carga contexto profundo sólo cuando la fase lo necesite.
 
 ## Human checkpoints / Checkpoints humanos

@@ -101,3 +101,11 @@ Shadertoy was protected by a browser verification page during review, so no cont
 Readymag Design Stories presents an archive of influential designers and explains that stories are built with an interactive graphical editor. Transferable principles: use editorial sequencing, let typography and composition carry the narrative, explain the historical or conceptual reason for a choice, and treat the interactive format as part of the story.
 
 Sources: https://www.shadertoy.com/ ; https://readymag.com/designstories/
+
+## Agent skill repositories comparison
+
+VoltAgent/awesome-agent-skills reports a curated, community-oriented collection with broad compatibility across Claude Code, Codex, Gemini CLI, Cursor, Copilot, OpenCode and Windsurf. Its key quality guidance is useful: third-person descriptions with trigger keywords, progressive disclosure, no absolute paths, and scoped tool dependencies. It explicitly warns that the collection is curated but not audited, so source review and validation remain necessary.
+
+Addy Osmani's agent-skills repository presents production-oriented lifecycle skills and multiple host paths, with visible validation, security references, hooks, evaluations, agents, scripts and plugin manifests. Its public structure reinforces the value of Phase 0 scope/capability mapping, skill linting, link/reference gates, ecosystem-neutral TDD and explicit installation paths.
+
+Sources: https://github.com/VoltAgent/awesome-agent-skills ; https://github.com/addyosmani/agent-skills
