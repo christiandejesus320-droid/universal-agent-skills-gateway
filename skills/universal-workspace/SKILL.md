@@ -73,3 +73,31 @@ Antes de terminar, ejecuta las verificaciones disponibles. Si el trabajo implica
 ## Contrato de salida
 
 Devuelve una respuesta estructurada con: `objective`, `selected_skills`, `provider`, `model`, `actions`, `evidence`, `risks`, `next_step`. Cuando el agente anfitrión no soporte JSON, conserva esos encabezados como secciones Markdown.
+
+## Human-readable design handoff / Entrega de diseño legible
+
+### Problem / Problema
+**EN:** Humans and models need to know which capability solves the current task before activating a skill.
+
+**ES:** Las personas y los modelos necesitan saber qué capacidad resuelve la tarea actual antes de activar una skill.
+
+### Purpose / Propósito
+**EN:** Select the smallest validated skill set, preserve context, and return evidence instead of vague completion claims.
+
+**ES:** Seleccionar el conjunto mínimo de skills validadas, preservar el contexto y devolver evidencia en lugar de afirmar éxitos vagos.
+
+### Inputs / Entradas
+The user objective, repository state, constraints, risk level, available tools, preferred language, and selected catalog identifiers.
+
+El objetivo del usuario, estado del repositorio, restricciones, nivel de riesgo, herramientas disponibles, idioma preferido e identificadores seleccionados del catálogo.
+
+### Outputs / Salidas
+A structured plan, selected skills, implementation artifacts, evidence, risks, and next step. / Un plan estructurado, skills seleccionadas, artefactos, evidencia, riesgos y siguiente paso.
+
+### States / Estados
+`discovering`, `selected`, `loading`, `executing`, `blocked`, `reviewing`, `validated`, `failed`.
+
+### Accessibility / Accesibilidad
+Keep headings explicit, use readable Markdown, preserve bilingual labels where required, describe state changes in text, and never make a critical decision depend only on color or an icon.
+
+Mantén encabezados explícitos, usa Markdown legible, conserva etiquetas bilingües cuando sea necesario, describe los cambios de estado con texto y nunca hagas que una decisión crítica dependa sólo de color o icono.

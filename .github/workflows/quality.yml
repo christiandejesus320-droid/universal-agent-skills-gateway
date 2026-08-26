@@ -1,0 +1,60 @@
+name: Universal Design UI Library Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Build, validate and test library
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate library contracts
+        run: npm run validate:library
+
+      - name: Validate JSON documents
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('catalog/skills.json'))"
+          node -e "JSON.parse(require('fs').readFileSync('library/design-catalog.json'))"
+          node -e "JSON.parse(require('fs').readFileSync('library/mcp-tools.schema.json'))"
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Run integration tests
+        run: npm test
+
+      - name: Scan for embedded credentials
+        shell: bash
+        run: |
+          if grep -RInE 'sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH) PRIVATE KEY' \
+            --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git .; then
+            echo 'Potential credential pattern found.'
+            exit 1
+          fi
+
+      - name: Check repository cleanliness
+        run: git diff --exit-code
