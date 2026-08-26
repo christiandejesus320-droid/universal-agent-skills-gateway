@@ -45,3 +45,35 @@ Sources:
 - OWASP ASVS is a basis for testing web application security controls and provides developer requirements for secure development. Its v5.0.0 requirements include injection prevention and explicit versioned references.
 - Applied rule: treat strict typing, runtime validation, input sanitization, authorization, parameterized queries and versioned security checks as requirements when the task actually involves them, not as unconditional implementation of infrastructure.
 - Sources: https://www.typescriptlang.org/tsconfig/strict.html ; https://owasp.org/www-project-application-security-verification-standard/
+
+## Luxury design research: Mazarine and Studio Freight
+
+Mazarine presents luxury as a coordinated system across brand strategy, campaigns, content, agentic AI, digital innovation, product design, packaging, experiences and culture. Transferable principles: craft a coherent brand territory across touchpoints, combine creativity with technology, make detail and tailored solutions explicit, and treat experience as a full system rather than a single screen.
+
+Studio Freight frames its work as mission-driven and contextual: strategy, design and technology move a partner from its current state to a desired state. Its identity combines a simple symbolic mark with narrative depth and a flexible visual language described as schematic surrealism, balancing clarity and uncertainty. Transferable principles: define the mission before the artifact, let constraints shape the route, use one memorable visual grammar, and pair collaboration with purposeful execution.
+
+Sources: https://www.mazarine.com/en ; https://studiofreight.com/work/studio-freight
+
+## Luxury design research: Immersive Garden and Pentagram
+
+Immersive Garden's project index spans design, technology, branding, strategy, experience, 3D, ecommerce, film, NFT and Web3. Transferable principle: treat 3D and interaction as part of a broader experience system, route the medium to the story, and keep technology subordinate to meaning.
+
+Pentagram describes its work as designing everything for everyone and emphasizes discovery, fresh expression, meaning for the client and typography as a carrier of voice and emotion. Transferable principles: let each project find its truest expression instead of forcing a house style, use typography as semantic structure, and evaluate design by meaning and fit rather than novelty alone.
+
+Sources: https://immersive-g.com/projects/ ; https://www.pentagram.com/
+
+## Luxury design research: Resn and Locomotive
+
+Resn positions its work around bringing stories to life across brand, content, experience and digital, with technology innovation as a visible category. Transferable principles: begin with narrative intent, make the medium serve the story, and connect brand, content and interaction instead of treating them as isolated deliverables.
+
+Locomotive describes design and code as tools of expression, with people as the differentiator. It emphasizes bespoke digital-first brand identities and experiences tailored to audience, and an end-to-end relationship from strategy through deployment and maintenance. Transferable principles: preserve human and audience context, make design and engineering one accountable craft, and design for the complete lifecycle rather than the launch screenshot.
+
+Sources: https://resn.co.nz/ ; https://locomotive.ca/en
+
+## Luxury design research: Siteinspire and Awwwards
+
+Siteinspire structures inspiration through searchable, curated filters such as popular categories, styles, types, subjects and platforms. Its visible categories include typography, art direction, portfolio, interactive design, ecommerce, minimal and grid design. Transferable principles: make inspiration searchable by intent, separate visual style from product type, and expose metadata that helps a designer select a relevant precedent quickly.
+
+Awwwards combines discovery, nominees, winners, education, collections, directory and marketplace. It exposes a public score and uses categories around web design, UX/UI, animation and technology. Transferable principles: evaluate craft across multiple dimensions, separate inspiration from learning and delivery, and turn subjective quality into an explicit review rubric without treating the score as absolute truth.
+
+Sources: https://www.siteinspire.com/ ; https://www.awwwards.com/
