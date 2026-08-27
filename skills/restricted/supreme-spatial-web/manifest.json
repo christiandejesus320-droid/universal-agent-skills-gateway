@@ -30,5 +30,6 @@
   ],
   "not_a_default_capability": true,
   "not_a_gateway": true,
-  "preserves_universal_workspace": true
+  "preserves_universal_workspace": true,
+  "proof_artifact": "../../examples/spatial-web-preview/index.html"
 }

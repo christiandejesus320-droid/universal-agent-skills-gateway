@@ -248,6 +248,7 @@ not_loaded: list of references intentionally omitted
 | Dirección editorial | `references/editorial-atelier.md`. |
 | PBR avanzado o splats | `references/advanced-spatial-rendering.md`. |
 | Prompt original del usuario | Sólo el archivo específico en `original-prompts/`. |
+| Preview manipulable | `../../examples/spatial-web-preview/index.html` y su README, sólo para probar video + 3D. |
 
 No abrir todos los archivos por defecto. No convertir este módulo en una dependencia obligatoria del Universal Agent Workspace.
 
