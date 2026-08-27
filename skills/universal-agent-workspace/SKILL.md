@@ -215,7 +215,6 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `azure-diagnostics` | Diagnosticar incidentes y problemas operativos en Azure. | microsoft/azure-skills |
 | `firebase-basics` | Aplicar fundamentos de Firebase con controles operativos. | firebase/agent-skills |
 | `full-output-enforcement` | Evitar entregables incompletos mediante validación de salida. | leonxlnx/taste-skill |
-
 ### release-ops
 
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
@@ -230,7 +229,6 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `azure-cost-optimization` | Identificar oportunidades de optimización de costes en Azure. | microsoft/azure-skills |
 | `azure-compute` | Elegir y operar recursos de cómputo en Azure. | microsoft/azure-skills |
 | `remotion-best-practices` | Aplicar prácticas sólidas para producir vídeo con Remotion. | remotion-dev/skills |
-
 ### design-frontend
 
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
@@ -245,7 +243,9 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `vercel-react-best-practices` | Aplicar rendimiento y buenas prácticas de React y Next.js. | vercel-labs/agent-skills |
 | `vercel-react-native-skills` | Construir interfaces React Native con patrones fiables. | vercel-labs/agent-skills |
 | `ui-ux-pro-max` | Diseñar UI/UX con sistema visual, jerarquía y criterios de producto. | nextlevelbuilder/ui-ux-pro-max-skill |
-
+| `realtime-webgl-shaders` | Crear superficies, fondos y escenas WebGL/GLSL en tiempo real con preview funcional. | universal-agent-workspace |
+| `3d-web-experience` | Construir experiencias 3D para web con intención de cámara, interacción, fallback y presupuesto de frames. | universal-agent-workspace |
+| `shader-performance-review` | Revisar uniforms, drawing buffer, device pixel ratio, errores de contexto y coste por píxel. | universal-agent-workspace |
 ### docs-content
 
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |

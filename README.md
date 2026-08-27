@@ -109,6 +109,10 @@ Para una tarea visual, cada control debe tener estados de espera, foco, acción,
 
 También añadí una referencia completa para construir páginas con shaders en tiempo real. Conserva el prompt maestro de WebGL tal como lo escribí y le agrega lo que suele faltar cuando un agente intenta hacer este tipo de trabajo: presupuesto por dispositivo, `devicePixelRatio` controlado, uniforms cacheados, pérdida de contexto, fallback, reduced motion y una preview funcional. La prueba está en [`examples/webgl/realtime-surface`](examples/webgl/realtime-surface).
 
+<p align="center"><a href="examples/webgl/realtime-surface/index.html"><img src="library/assets/realtime-surface-preview.png" width="720" alt="Preview de la superficie WebGL en tiempo real"></a></p>
+
+La imagen es la referencia visual de la demo. El archivo HTML enlazado es la experiencia viva: la imagen muestra el punto de entrada y el enlace abre la superficie con sus controles.
+
 ## Un ejemplo real de uso
 
 ```text
