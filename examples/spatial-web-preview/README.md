@@ -1,10 +1,10 @@
 # Spatial Web Preview / Preview de video y 3D
 
-Esta preview es la prueba funcional del módulo `supreme-spatial-web`.
+Esta experiencia es la prueba funcional del módulo `supreme-spatial-web`. La pieza Meridian dura exactamente 20:08 y usa movimiento espacial lento para poder observar, pausar y recorrer la escena.
 
 ## Qué se puede manipular
 
-El video tiene reproducción, pausa, mute, scrub temporal, compartir y scrubbing por scroll. La capa WebGL tiene una formación de partículas que responde al cursor y permite arrastrar la escena. El video y la capa 3D viven juntos para comprobar que la experiencia no depende de una imagen estática.
+El video tiene reproducción, pausa, mute, scrub temporal, compartir y scrubbing por scroll. La capa WebGL tiene una formación de partículas que responde al cursor y permite arrastrar la escena. El video y la capa 3D viven juntos para comprobar que la experiencia no depende de una imagen estática. El guion documental en inglés está en `skills/restricted/supreme-spatial-web/assets/meridian-narration-en.md`; la pista de voz se integrará cuando el conector de ElevenLabs tenga permiso de síntesis.
 
 ## Ejecutar
 
