@@ -52,7 +52,9 @@
     const pointer={x:.5,y:.5};window.addEventListener('pointermove',e=>{pointer.x=e.clientX/innerWidth;pointer.y=1-e.clientY/innerHeight},{passive:true});
     function resize(){const dpr=Math.min(devicePixelRatio||1,1.5),w=Math.floor(innerWidth*dpr),h=Math.floor(innerHeight*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}}
     window.addEventListener('resize',resize);canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();status.textContent='GPU surface · contexto perdido'});canvas.addEventListener('webglcontextrestored',()=>status.textContent='GPU surface · restaurado');resize();
-    let start=performance.now();function frame(now){resize();gl.uniform1f(uniforms.time,(now-start)/1000);gl.uniform1f(uniforms.speed,+controls[0].value);gl.uniform1f(uniforms.scale,+controls[1].value);gl.uniform1f(uniforms.warp,+controls[2].value);gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);gl.uniform2f(uniforms.mouse,pointer.x,pointer.y);gl.drawArrays(gl.TRIANGLES,0,6);requestAnimationFrame(frame)}requestAnimationFrame(frame);
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reducedMotion)status.textContent='GPU surface · movimiento reducido';
+    let start=performance.now();function frame(now){resize();gl.uniform1f(uniforms.time,reducedMotion?0:(now-start)/1000);gl.uniform1f(uniforms.speed,+controls[0].value);gl.uniform1f(uniforms.scale,+controls[1].value);gl.uniform1f(uniforms.warp,+controls[2].value);gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);gl.uniform2f(uniforms.mouse,pointer.x,pointer.y);gl.drawArrays(gl.TRIANGLES,0,6);requestAnimationFrame(frame)}requestAnimationFrame(frame);
   </script>
 </body>
 </html>
