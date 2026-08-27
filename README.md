@@ -82,6 +82,11 @@ skills/universal-agent-workspace/
     ├── luxury-digital-design-system.md
     ├── creative-documentation-system.md
     ├── skills-benchmark.md
+    ├── webgl/
+    │   ├── webgl-shader-master-prompt.md
+    │   ├── webgl-research-notes.md
+    │   ├── realtime-webgl-workflow.md
+    │   └── web-experience-production.md
     ├── maps/
     └── images/
 ```
@@ -101,6 +106,8 @@ TOKENS → ATOMS → MOLECULES → ORGANISMS → LAYOUT
 La dirección visual es OLED, editorial, técnica y silenciosa. Uso un color de acento con significado, tipografía legible, espacio suficiente, pocos contenedores y motion sólo cuando explica una transición o un cambio de estado. Una interfaz no se vuelve mejor por parecer futurista.
 
 Para una tarea visual, cada control debe tener estados de espera, foco, acción, carga, desactivado, éxito y error. Para una tarea con Canvas, Three.js, WebGL, WebGPU o Remotion, primero explico por qué la tecnología mejora la comprensión y después defino fallback, rendimiento y alternativa accesible.
+
+También añadí una referencia completa para construir páginas con shaders en tiempo real. Conserva el prompt maestro de WebGL tal como lo escribí y le agrega lo que suele faltar cuando un agente intenta hacer este tipo de trabajo: presupuesto por dispositivo, `devicePixelRatio` controlado, uniforms cacheados, pérdida de contexto, fallback, reduced motion y una preview funcional. La prueba está en [`examples/webgl/realtime-surface`](examples/webgl/realtime-surface).
 
 ## Un ejemplo real de uso
 
