@@ -2,7 +2,9 @@
 
 > **Una biblioteca de conocimiento operativo para trabajar con agentes.**
 
-<p align="center"><img src="library/assets/universal-skill-token-control-laptop-only.png" width="560" alt="Laptop mostrando una superficie de trabajo para controlar contexto y ejecución"></p>
+<p align="center"><img src="skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" width="720" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja"></p>
+
+<p align="center"><sub>MERIDIAN / SPATIAL FIELD — una escena de partículas, luz y profundidad para mostrar cómo una idea puede convertirse en una experiencia web viva.</sub></p>
 
 Estoy construyendo esta skill para resolver algo que ocurre todo el tiempo: uno le pide algo a un agente y empieza a escribir código, buscar cosas o ejecutar comandos antes de entender realmente el trabajo.
 
@@ -107,11 +109,11 @@ La dirección visual es OLED, editorial, técnica y silenciosa. Uso un color de 
 
 Para una tarea visual, cada control debe tener estados de espera, foco, acción, carga, desactivado, éxito y error. Para una tarea con Canvas, Three.js, WebGL, WebGPU o Remotion, primero explico por qué la tecnología mejora la comprensión y después defino fallback, rendimiento y alternativa accesible.
 
-También añadí una referencia completa para construir páginas con shaders en tiempo real. Conserva el prompt maestro de WebGL tal como lo escribí y le agrega lo que suele faltar cuando un agente intenta hacer este tipo de trabajo: presupuesto por dispositivo, `devicePixelRatio` controlado, uniforms cacheados, pérdida de contexto, fallback, reduced motion y una preview funcional. La prueba está en [`examples/webgl/realtime-surface`](examples/webgl/realtime-surface).
+También añadí una referencia completa para construir páginas con shaders en tiempo real. Conserva el prompt maestro de WebGL tal como lo escribí y le agrega lo que suele faltar cuando un agente intenta hacer este tipo de trabajo: presupuesto por dispositivo, `devicePixelRatio` controlado, uniforms cacheados, pérdida de contexto, fallback, reduced motion y una demostración funcional. La prueba está en [`examples/webgl/realtime-surface`](examples/webgl/realtime-surface).
 
-<p align="center"><a href="examples/webgl/realtime-surface/index.html"><img src="library/assets/realtime-surface-preview.png" width="720" alt="Preview de la superficie WebGL en tiempo real"></a></p>
+<p align="center"><a href="examples/spatial-web-preview/index.html"><img src="skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" width="720" alt="Meridian: superficie espacial manipulable con partículas y línea de luz"></a></p>
 
-La imagen es la referencia visual de la demo. El archivo HTML enlazado es la experiencia viva: la imagen muestra el punto de entrada y el enlace abre la superficie con sus controles.
+La escena Meridian es el punto de entrada visual. El archivo HTML enlazado abre la experiencia viva: video, timeline, scroll, cursor, arrastre y capa 3D trabajan juntos en la misma composición.
 
 ## Un ejemplo real de uso
 
