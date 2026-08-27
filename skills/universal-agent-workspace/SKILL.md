@@ -44,8 +44,9 @@ CONTEXT AUDIT → STRICT PLAN → TARGETED RESEARCH → SURGICAL EXECUTION → V
 | UI atomic map / Mapa atómico UI | Designing interfaces / Diseñar interfaces | [`03-ui-atomic.mmd`](references/maps/03-ui-atomic.mmd) · [`PNG`](references/maps/rendered/03-ui-atomic.png) |
 | Pause on error / Pausa ante error | Handling a failed command or test / Resolver un error | [`04-pause-on-error.mmd`](references/maps/04-pause-on-error.mmd) · [`PNG`](references/maps/rendered/04-pause-on-error.png) |
 | Practical visual / Imagen práctica | Explaining the skill to people / Explicar la skill a personas | [`universal-skill-token-control-hero.png`](references/images/universal-skill-token-control-hero.png) |
-| Real-time WebGL / WebGL en tiempo real | Building Canvas, GLSL, WebGL, WebGPU, Three.js or shader pages with live preview / Crear páginas con Canvas, GLSL, WebGL, WebGPU, Three.js o shaders con preview en vivo | [`realtime-webgl-workflow.md`](references/webgl/realtime-webgl-workflow.md) · [`master prompt`](references/webgl/webgl-shader-master-prompt.md) · [`demo`](../../examples/webgl/realtime-surface/index.html) |
+| Real-time WebGL / WebGL en tiempo real | Building Canvas, GLSL, WebGL, WebGPU, Three.js or shader pages with live preview / Crear páginas con Canvas, GLSL, WebGL, WebGPU, Three.js o shaders con preview en vivo | [`realtime-webgl-workflow.md`](references/webgl/realtime-webgl-workflow.md) · [`master prompt`](references/webgl/webgl-shader-master-prompt.md) · [`creative motion prompt`](references/webgl/master-creative-technologist-motion-engine.md) · [`demo`](../../examples/webgl/realtime-surface/index.html) |
 | Realistic web experience / Experiencia web realista | Building a usable web page or app with intention, scale, states, evidence, fallback and responsive behavior / Crear una página o app usable con intención, escala, estados, evidencia, fallback y responsive | [`web-experience-production.md`](references/webgl/web-experience-production.md) |
+| Editorial product web / Web editorial de producto | Studying high-quality product pages, audiovisual evidence, scroll narrative and restrained motion / Estudiar páginas de producto, evidencia audiovisual, narrativa de scroll y motion controlado | [`openai-inspired-web-motion.md`](references/openai-inspired-web-motion.md) · [`openai-visual-audit.md`](../../openai-visual-audit.md) |
 **Loading rule / Regla de carga:** show this index immediately, but load only the one map or image required by the current task. Never load all resources by default.
 ## Problem / Problema
 
@@ -130,7 +131,7 @@ Para UI usa `TOKENS → ÁTOMOS → MOLÉCULAS → ORGANISMOS → LAYOUT`. Empie
 
 Use 3D, Canvas or Remotion only when it improves comprehension, interaction or storytelling. Define fallback, reduced-motion behavior, frame budget, camera/scene intent, loading state and accessibility alternative. Never add animation merely for decoration.
 
-Usa 3D, Canvas o Remotion sólo cuando mejore comprensión, interacción o storytelling. Define fallback, reduced motion, presupuesto de frames, intención de cámara/escena, loading y alternativa accesible. Nunca añadas animación sólo por decoración. Para branding, lujo digital, portfolio o dirección de arte, lee `references/luxury-digital-design-system.md` bajo demanda. Para WebGL, Three.js, GLSL, WebGPU, motion, shaders o documentación creativa, lee `references/creative-documentation-system.md` bajo demanda. Cuando la petición incluya shaders, fondos generativos o GPU en tiempo real, lee primero `references/webgl/webgl-shader-master-prompt.md` y después `references/webgl/realtime-webgl-workflow.md`; conserva las fases y bloques originales, añade sólo arquitectura, rendimiento, fallback y verificación. Cuando la petición sea crear una página o app web realista, lee `references/webgl/web-experience-production.md` para definir intención, escala, estados, responsive, accesibilidad y preview antes de construir. / For branding, luxury digital, portfolio or art direction, read it on demand; for creative coding or documentation, read `references/creative-documentation-system.md` on demand. For real-time GPU work, read the user's master prompt first and the WebGL workflow second; preserve the original phases and blocks.
+Usa 3D, Canvas o Remotion sólo cuando mejore comprensión, interacción o storytelling. Define fallback, reduced motion, presupuesto de frames, intención de cámara/escena, loading y alternativa accesible. Nunca añadas animación sólo por decoración. Para branding, lujo digital, portfolio o dirección de arte, lee `references/luxury-digital-design-system.md` bajo demanda. Para WebGL, Three.js, GLSL, WebGPU, motion, shaders o documentación creativa, lee `references/creative-documentation-system.md` bajo demanda. Cuando la petición incluya shaders, fondos generativos o GPU en tiempo real, lee primero `references/webgl/webgl-shader-master-prompt.md` y después `references/webgl/realtime-webgl-workflow.md`; conserva las fases y bloques originales, añade sólo arquitectura, rendimiento, fallback y verificación. Cuando la petición sea crear una página o app web realista, lee `references/webgl/web-experience-production.md` para definir intención, escala, estados, responsive, accesibilidad y preview antes de construir. Cuando la petición pida estudiar o crear una web editorial con video, audio, scroll narrativo o una dirección cercana a las referencias de OpenAI, lee `references/openai-inspired-web-motion.md` y `openai-visual-audit.md`; extrae patrones, no identidad ni activos. / For branding, luxury digital, portfolio or art direction, read it on demand; for creative coding or documentation, read `references/creative-documentation-system.md` on demand. For real-time GPU work, read the user's master prompt first and the WebGL workflow second; preserve the original phases and blocks.
 
 ## Output contract / Contrato de salida
 
@@ -157,7 +158,6 @@ The following 100 capabilities are embedded as a routing index. Their upstream n
 Las siguientes 100 capacidades están embebidas como índice de routing. Se conservan sus nombres upstream; el agente usa el resumen para decidir cuándo aplican, sin ejecutar código externo de skills.
 
 ### product-strategy
-
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
 | --- | --- | --- |
 | `office-hours` | Descubrir el problema real mediante preguntas de forcing y reformular la oportunidad. | gstack |
@@ -216,7 +216,6 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `firebase-basics` | Aplicar fundamentos de Firebase con controles operativos. | firebase/agent-skills |
 | `full-output-enforcement` | Evitar entregables incompletos mediante validación de salida. | leonxlnx/taste-skill |
 ### release-ops
-
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
 | --- | --- | --- |
 | `ship` | Preparar cambios, ejecutar pruebas, actualizar cobertura y abrir PR. | gstack |
@@ -230,7 +229,6 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `azure-compute` | Elegir y operar recursos de cómputo en Azure. | microsoft/azure-skills |
 | `remotion-best-practices` | Aplicar prácticas sólidas para producir vídeo con Remotion. | remotion-dev/skills |
 ### design-frontend
-
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
 | --- | --- | --- |
 | `plan-design-review` | Evaluar y elevar una propuesta visual antes de implementarla. | gstack |
@@ -246,8 +244,10 @@ Las siguientes 100 capacidades están embebidas como índice de routing. Se cons
 | `realtime-webgl-shaders` | Crear superficies, fondos y escenas WebGL/GLSL en tiempo real con preview funcional. | universal-agent-workspace |
 | `3d-web-experience` | Construir experiencias 3D para web con intención de cámara, interacción, fallback y presupuesto de frames. | universal-agent-workspace |
 | `shader-performance-review` | Revisar uniforms, drawing buffer, device pixel ratio, errores de contexto y coste por píxel. | universal-agent-workspace |
+| `editorial-generative-hero` | Diseñar un hero visual con una idea dominante, escala controlada y medio que demuestre el producto. | universal-agent-workspace |
+| `video-evidence-storytelling` | Usar video, prompt, poster, rail de variaciones, audio y texto para demostrar una capacidad real. | universal-agent-workspace |
+| `scroll-narrative-motion` | Construir una narrativa de scroll con transiciones causales, pausa, reduced motion y carga progresiva. | universal-agent-workspace |
 ### docs-content
-
 | Capability / Capacidad | Use when / Usar cuando | Source / Fuente |
 | --- | --- | --- |
 | `document-generate` | Generar documentación completa con enfoque Diátaxis. | gstack |
