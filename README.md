@@ -4,7 +4,7 @@
 
 <p align="center"><strong>MERIDIAN / CAMPO ESPACIAL</strong><br><sub>Una superficie viva de partículas, luz y decisión. Entra y mira cómo trabaja.</sub></p>
 
-<p align="center"><a href="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4" aria-label="Abrir Meridian con audio y controles"><img src="library/assets/meridian-field-preview.gif" width="100%" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja en movimiento"></a></p>
+<p align="center"><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/docs/index.html" aria-label="Abrir Meridian con audio y controles"><img src="library/assets/meridian-field-preview.gif" width="100%" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja en movimiento"></a></p>
 
 <p align="center"><sub>MERIDIAN / SPATIAL FIELD · toca la escena para escucharla y recorrer el tiempo</sub></p>
 
