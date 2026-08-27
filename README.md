@@ -2,13 +2,11 @@
 
 > **Una biblioteca de conocimiento operativo para trabajar con agentes.**
 
-<p align="center"><strong>MERIDIAN / CAMPO ESPACIAL</strong><br><sub>Video real de 20:08 con audio, avance, retroceso, mute y reproducción controlada.</sub></p>
+<p align="center"><strong>MERIDIAN / CAMPO ESPACIAL</strong><br><sub>Una superficie viva de partículas, luz y decisión. Entra y mira cómo trabaja.</sub></p>
 
-<p align="center"><video src="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4" poster="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" controls preload="metadata" playsinline width="100%" aria-label="Meridian: campo espacial de partículas blancas atravesado por una línea roja"></video></p>
+<p align="center"><img src="library/assets/meridian-field-preview.gif" width="100%" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja en movimiento"></p>
 
-<p align="center"><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/docs/index.html"><strong>Abrir el reproductor real de Meridian</strong></a> · <a href="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4">Descargar o compartir el video</a></p>
-
-<p align="center"><img src="skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" width="720" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja"></p>
+<p align="center"><sub>MERIDIAN / SPATIAL FIELD · una escena viva, no una captura de pantalla</sub></p>
 
 <p align="center"><sub>MERIDIAN / SPATIAL FIELD — una escena de partículas, luz y profundidad para mostrar cómo una idea puede convertirse en una experiencia web viva.</sub></p>
 
