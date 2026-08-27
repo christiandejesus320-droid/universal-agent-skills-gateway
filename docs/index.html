@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Meridian — Universal Agent Workspace</title>
+  <title>Meridian — Spatial Field</title>
   <style>
     :root{color-scheme:dark;--ink:#f4f4f1;--muted:#9b9b98;--line:#2c2c2c;--accent:#e92743;--panel:rgba(7,7,7,.84)}
     *{box-sizing:border-box}html{background:#000;scroll-behavior:smooth}body{margin:0;background:#000;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;min-height:180vh}
@@ -23,7 +23,7 @@
 <body>
   <main class="stage" aria-label="Meridian: experiencia manipulable de video y 3D">
     <canvas id="spatial" aria-label="Escena 3D de partículas manipulable"></canvas>
-    <div class="video-layer"><video id="heroVideo" preload="metadata" playsinline loop poster="../skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png"><source src="../skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4" type="video/mp4"></video></div>
+    <div class="video-layer"><video id="heroVideo" preload="metadata" playsinline loop controls poster="../skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png"><source src="../skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4" type="video/mp4"></video></div>
     <div class="vignette"></div><svg class="accent-line" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true"><path class="halo" d="M20 150 C 210 30, 325 55, 480 225 S 760 380, 980 90"></path><path d="M20 150 C 210 30, 325 55, 480 225 S 760 380, 980 90"></path></svg>
     <header class="mast"><div class="eyebrow">Meridian / Spatial Field</div><h1>El espacio también puede explicar.</h1><p>Una pieza lenta sobre Meridian: contexto, decisión y ejecución visibles dentro de una experiencia de video y 3D.</p></header>
     <aside class="instruction"><strong>Arrastra</strong> para girar la escena.<br><strong>Scroll</strong> para recorrer el tiempo.<br><strong>Play</strong> para dejarla viva.</aside>
@@ -36,11 +36,11 @@
   <section class="scroll-space"><p>La escena se mantiene fija mientras el scroll controla el tiempo del video. La narración en inglés está mezclada dentro del master de 20:08 como un documental sobre Meridian, la inteligencia espacial y el control del trabajo. La capa WebGL conserva su propia profundidad para que el cursor y la rueda no sean sólo una animación: son parte de la lectura del objeto.</p></section>
   <script>
     const canvas=document.querySelector('#spatial'),gl=canvas.getContext('webgl',{antialias:true,alpha:true}),video=document.querySelector('#heroVideo'),play=document.querySelector('#play'),mute=document.querySelector('#mute'),scrub=document.querySelector('#scrub'),time=document.querySelector('#time'),status=document.querySelector('#status');
-    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let pointerX=0,pointerY=0,targetX=0,targetY=0,drag=false,lastY=0;
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const cinematicRate=.72;video.defaultPlaybackRate=cinematicRate;video.playbackRate=cinematicRate;let pointerX=0,pointerY=0,targetX=0,targetY=0,drag=false,lastY=0;
     function fmt(v){const n=Math.max(0,Math.floor(v)),m=Math.floor(n/60),s=n%60;return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
     function updateTime(){const d=video.duration||1208;scrub.max=d; scrub.value=video.currentTime||0;time.textContent=`${fmt(video.currentTime||0)} / ${fmt(d)}`}
-    video.addEventListener('timeupdate',updateTime); video.addEventListener('loadedmetadata',updateTime); video.addEventListener('error',()=>{status.textContent='Video fallback / spatial layer remains available'});
-    play.onclick=async()=>{if(video.paused){await video.play().catch(()=>{});play.textContent='Ⅱ';play.setAttribute('aria-label','Pausar video');status.textContent='Meridian / video and narration playing'}else{video.pause();play.textContent='▶';play.setAttribute('aria-label','Reproducir video');status.textContent='Meridian / playback paused'}};
+    video.addEventListener('timeupdate',updateTime); video.addEventListener('loadedmetadata',()=>{video.defaultPlaybackRate=cinematicRate;video.playbackRate=cinematicRate;updateTime()}); video.addEventListener('error',()=>{status.textContent='Video fallback / spatial layer remains available'});
+    play.onclick=async()=>{if(video.paused){await video.play().catch(()=>{});play.textContent='Ⅱ';play.setAttribute('aria-label','Pausar video');status.textContent='Meridian / slow cinematic playback / narration synced'}else{video.pause();play.textContent='▶';play.setAttribute('aria-label','Reproducir video');status.textContent='Meridian / playback paused'}};
     mute.onclick=()=>{video.muted=!video.muted;mute.textContent=video.muted?'Mute':'Sound';mute.setAttribute('aria-label',video.muted?'Activar sonido':'Silenciar')}; scrub.oninput=()=>{video.currentTime=Number(scrub.value)};
     document.querySelector('#share').onclick=async()=>{try{if(navigator.share){await navigator.share({title:'Meridian / Spatial Field',text:'Meridian: un espacio de trabajo universal para agentes.',url:location.href});status.textContent='Shared / experiencia compartida'}else{await navigator.clipboard.writeText(location.href);status.textContent='Link copied / enlace copiado'}}catch{status.textContent='Share cancelled / compartir desde el navegador'}};
     addEventListener('pointermove',e=>{targetX=(e.clientX/innerWidth-.5)*1.2;targetY=(e.clientY/innerHeight-.5)*-.8;if(drag){pointerX+=(e.clientX-pointerX)*.003;pointerY+=(e.clientY-lastY)*.003;lastY=e.clientY}});canvas.onpointerdown=e=>{drag=true;pointerX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)};canvas.onpointerup=()=>drag=false;
