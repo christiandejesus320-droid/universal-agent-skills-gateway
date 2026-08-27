@@ -1,0 +1,34 @@
+{
+  "id": "supreme-spatial-web",
+  "title": "Supreme Spatial Web / WebGPU Atelier",
+  "status": "restricted",
+  "default_load": false,
+  "activation": "explicit_only",
+  "keywords": [
+    "spatial web",
+    "computación espacial",
+    "WebGPU",
+    "WGSL",
+    "PBR",
+    "WebXR",
+    "3D Gaussian splats",
+    "ray marching",
+    "scrollytelling",
+    "immersive web",
+    "Awwwards",
+    "Lusion",
+    "Active Theory",
+    "editorial luxury web"
+  ],
+  "discovery_instruction": "Search this manifest by keyword first. Do not load SKILL.md or original prompts unless the user explicitly requests the Supreme Spatial Web module.",
+  "load_order": [
+    "manifest.json",
+    "SKILL.md",
+    "references/activation-gate.md",
+    "only the technical reference required by the task",
+    "original-prompts only when explicitly requested"
+  ],
+  "not_a_default_capability": true,
+  "not_a_gateway": true,
+  "preserves_universal_workspace": true
+}
