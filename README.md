@@ -6,7 +6,7 @@
 
 <p align="center"><video src="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4" poster="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" controls preload="metadata" playsinline width="100%" aria-label="Meridian: campo espacial de partículas blancas atravesado por una línea roja"></video></p>
 
-<p align="center"><a href="examples/spatial-web-preview/index.html"><strong>Abrir el reproductor espacial completo</strong></a> · <a href="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4">Descargar o compartir el video</a></p>
+<p align="center"><a href="https://christiandejesus320-droid.github.io/universal-agent-skills-gateway/"><strong>Abrir el reproductor real de Meridian</strong></a> · <a href="https://raw.githubusercontent.com/christiandejesus320-droid/universal-agent-skills-gateway/main/skills/restricted/supreme-spatial-web/assets/meridian-spatial-20m08-narrated.mp4">Descargar o compartir el video</a></p>
 
 <p align="center"><img src="skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" width="720" alt="Meridian: campo espacial de partículas blancas atravesado por una línea roja"></p>
 
@@ -119,7 +119,7 @@ También añadí una referencia completa para construir páginas con shaders en 
 
 <p align="center"><a href="examples/spatial-web-preview/index.html"><img src="skills/restricted/supreme-spatial-web/assets/preview-spatial-hero.png" width="720" alt="Meridian: superficie espacial manipulable con partículas y línea de luz"></a></p>
 
-La escena Meridian es el punto de entrada visual. El archivo HTML enlazado abre la experiencia viva: video, timeline, scroll, cursor, arrastre y capa 3D trabajan juntos en la misma composición.
+La escena Meridian es el punto de entrada visual. El reproductor publicado abre la experiencia viva: video real, audio, timeline, mute, compartir, scroll, cursor, arrastre y capa 3D trabajan juntos en la misma composición.
 
 ## Un ejemplo real de uso
 
