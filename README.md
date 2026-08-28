@@ -1,4 +1,4 @@
-# Wilenny for 🤽🏻🏀 Jennifer
+# Wilenny for 🤽🏻🏀 Jennifer 👨🏻‍💻
 
 > **Una biblioteca de conocimiento operativo para trabajar con agentes.**
 
