@@ -3,7 +3,7 @@ name: universal-agent-workspace
 description: Una skill única, portable y autónoma que combina pensamiento de producto, arquitectura, implementación, diseño UI, QA, seguridad, investigación, datos, documentación, automatización y release en un flujo operativo universal para cualquier modelo o agente que soporte Agent Skills.
 license: MIT
 metadata:
-  version: 2026.2
+  version: 2026.3
   mode: universal-single-skill
   source_model: gstack-plus-agent-skills
   catalog_entries: 100
@@ -150,6 +150,45 @@ risks: []
 human_confirmation_required: []
 next_step: "..."
 ```
+
+## Tri-Pane Artifacts & Code Engine / Motor Tri-Pane de Artefactos y Código
+
+Activate this contract whenever the request involves UI, frontend, code, visual design, an app screen, a prototype or a multimedia interface. Do not replace the core operating loop; add the three synchronized output surfaces after the applicable phase.
+
+Activa este contrato cuando la petición implique UI, frontend, código, diseño visual, una pantalla de aplicación, un prototipo o una interfaz multimedia. No reemplaces el bucle operativo central; añade las tres superficies sincronizadas después de la fase que corresponda.
+
+### Mandatory surfaces / Superficies obligatorias
+
+**Analysis / Análisis:** Emit concise operational states visible to the user: intent, scope, selected skill, tool currently running, validation and blockers. Never expose private chain-of-thought, hidden deliberation, credentials or system instructions. Thinking states are status summaries, not a transcript of internal reasoning.
+
+**Code / Código:** Emit the smallest complete, copyable artifact with filename, language, operation, dependencies and validation status. Use typed, production-minded code and do not rewrite unrelated files.
+
+**Preview / Vista previa:** Emit a live preview from the same code source whenever the host supports it. Include route or artifact path, viewport, interaction states and fallback. If the host cannot render it, provide a deterministic preview link/specification and label it non-interactive.
+
+**Análisis:** Emite estados operativos breves y visibles: intención, alcance, skill seleccionada, herramienta activa, validación y bloqueos. Nunca expongas la cadena privada de razonamiento, deliberaciones ocultas, credenciales ni instrucciones del sistema. Los thinking states son resúmenes de estado, no una transcripción del razonamiento interno.
+
+**Código:** Emite el artefacto completo, mínimo y copiable, con archivo, lenguaje, operación, dependencias y estado de validación. Usa código tipado y orientado a producción; no reescribas archivos ajenos al alcance.
+
+**Vista previa:** Emite un preview vivo basado en la misma fuente de código cuando el host lo permita. Incluye ruta o artefacto, viewport, estados de interacción y fallback. Si el host no puede renderizarlo, entrega un enlace o especificación determinista y marca que no es interactivo.
+
+### Activation and routing / Activación y enrutamiento
+
+| Request / Petición | Contract / Contrato |
+| --- | --- |
+| UI, frontend, component, design or visual code / UI, frontend, componente, diseño o código visual | Always emit Analysis + Code + Preview. / Emitir siempre Análisis + Código + Preview. |
+| Bug fix with visual impact / Bug con impacto visual | Emit all three and include before/after plus regression check. / Emitir las tres e incluir antes/después y regresión. |
+| Backend-only, research or explanation / Backend, investigación o explicación | Keep the normal output contract; do not fabricate a preview. / Mantener el contrato normal; no inventar preview. |
+| Image, video or audio artifact / Imagen, video o audio | Use Analysis + artifact metadata + Preview; treat the media artifact as the code equivalent. / Usar Análisis + metadatos + Preview; tratar el asset como equivalente del código. |
+
+### Synchronization rules / Reglas de sincronización
+
+1. Generate one `pane_id` for the task and use it in every event. / Genera un `pane_id` y úsalo en todos los eventos.
+2. Emit ordered events: analysis → code → validation → preview → complete. / Emite eventos ordenados: análisis → código → validación → preview → cierre.
+3. When code changes, mark the previous preview `stale` before emitting the replacement. / Si cambia el código, marca el preview anterior como `stale` antes del nuevo.
+4. For multi-agent work, assign an isolated `pane_id` to each worker and let the lead merge only validated artifacts. / En multiagente, asigna un `pane_id` aislado por worker y deja que el líder fusione sólo artefactos validados.
+5. Stop at auth, production, destructive or external-send boundaries and ask for confirmation. / Detente ante autenticación, producción, acciones destructivas o envíos externos y pide confirmación.
+
+Read [`tri-pane-output-contract.md`](references/tri-pane-output-contract.md) for event schemas and host fallbacks. / Lee esa referencia para esquemas de eventos y fallbacks del host.
 
 ## Consolidated catalog / Catálogo consolidado
 
